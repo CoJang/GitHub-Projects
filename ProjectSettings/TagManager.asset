@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - AttackCard
+  - SpellCard
+  - Card
+  - EnemyObject
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 3773541335
+    locked: 0
+  - name: EnemyCard
+    uniqueID: 2620459431
+    locked: 0
+  - name: MyCard
+    uniqueID: 442988239
+    locked: 0
+  - name: InnerSprite
+    uniqueID: 2801092897
+    locked: 0
+  - name: Frame
+    uniqueID: 2091983419
+    locked: 0
+  - name: Sprite
+    uniqueID: 4048678823
+    locked: 0
+  - name: Text
+    uniqueID: 3835856055
+    locked: 0
+  - name: Effect
+    uniqueID: 2373638905
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
