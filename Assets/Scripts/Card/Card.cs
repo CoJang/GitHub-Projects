@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 using UnityEngine;
 using TMPro;
 
@@ -11,13 +12,15 @@ public class Card : BaseCard
 
     private Quaternion alphaRot;
     public Vector3 alphaPos;
+    public int alphaSort;
+    public SortingGroup sorting;
 
     private float CardScaleFactor = 1.5f;
     private float CardUpPosFactor = 3.7f;
 
     protected int currentDmg;
 
-    protected enum Area
+    public enum Area
     {
         Deck,
         Hand,
@@ -25,7 +28,7 @@ public class Card : BaseCard
         Discard
     }
 
-    protected Area area = Area.Hand;
+    public Area area = Area.Deck;
 
     protected override void OnSkinCard()
     {
@@ -53,6 +56,7 @@ public class Card : BaseCard
         // Save Origin State
         alphaRot = transform.rotation;
         alphaPos = transform.position;
+        sorting = GetComponent<SortingGroup>();
     }
 
     protected virtual void OnMouseEnter()
@@ -61,6 +65,7 @@ public class Card : BaseCard
         transform.localScale = new Vector3(CardScaleFactor, CardScaleFactor, 1);
         transform.position = new Vector3(alphaPos.x, alphaPos.y + CardUpPosFactor, alphaPos.z);
         transform.rotation = new Quaternion(0, 0, 0, 1);
+        sorting.sortingOrder = 99;
         InputManager.instance.MyCard = this;
     }
 
@@ -78,7 +83,10 @@ public class Card : BaseCard
         transform.rotation = alphaRot;
 
         if(InputManager.instance.GetMouseState() == false)
+        {
+            sorting.sortingOrder = alphaSort;
             InputManager.instance.MyCard = null;
+        }
     }
     
 }

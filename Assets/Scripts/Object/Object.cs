@@ -41,7 +41,7 @@ public class Objects : BaseObject
 
     }
 
-    public void DealDamage(int deal)
+    public virtual void DealDamage(int deal)
     {
         OnDamageObject(deal);
     }

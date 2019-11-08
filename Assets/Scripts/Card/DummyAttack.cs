@@ -26,5 +26,6 @@ public class DummyAttack : Card
 
         Debug.Log(BaseSkin.cardName + " Played");
         area = Area.Discard;
+        Hand.instance.CardDraw();
     }
 }
