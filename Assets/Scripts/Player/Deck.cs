@@ -15,11 +15,11 @@ public class Deck : MonoBehaviour
 
     void Start()
     {
-        for(int i=0; i < 5; i++)
+        for(int i=0; i < 10; i++)
         {
             DeckList.Add("AttackCard");
         }
-        DeckList.Insert(1, "SpellCard");
+        //DeckList.Insert(1, "SpellCard");
     }
 
     //public GameObject DrawRequest()

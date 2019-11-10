@@ -10,8 +10,9 @@ public class Card : BaseCard
     private TextMeshPro[] Cardtxt;
     private SpriteRenderer[] Cardspr;
 
-    private Quaternion alphaRot;
+    public Quaternion alphaRot;
     public Vector3 alphaPos;
+
     public int alphaSort;
     public SortingGroup sorting;
 
@@ -74,6 +75,7 @@ public class Card : BaseCard
     {
         //Back To Origin Position In Hand
         transform.position = alphaPos;
+         //transform.position = alphaTrans.position;
     }
     protected virtual void OnMouseExit()
     {
@@ -81,10 +83,10 @@ public class Card : BaseCard
         transform.localScale = new Vector3(1, 1, 1);
         transform.position = alphaPos;
         transform.rotation = alphaRot;
+        sorting.sortingOrder = alphaSort;
 
-        if(InputManager.instance.GetMouseState() == false)
-        {
-            sorting.sortingOrder = alphaSort;
+        if (InputManager.instance.GetMouseState() == false)
+        {          
             InputManager.instance.MyCard = null;
         }
     }

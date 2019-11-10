@@ -15,6 +15,7 @@ public class Pointer : MonoBehaviour
 
     private void Awake()
     {
+        ArrowHead = GameObject.Find("TargetArrow").GetComponent<Transform>();
         gameObject.SetActive(false);
 
         pointer = this;
@@ -22,7 +23,6 @@ public class Pointer : MonoBehaviour
         Line = GetComponent<LineRenderer>();
         LineMat = Line.materials[0];
 
-        //ArrowHead = GameObject.Find("TargetArrow").GetComponent<Transform>();
     }
 
     public float matLength = 0.5f;

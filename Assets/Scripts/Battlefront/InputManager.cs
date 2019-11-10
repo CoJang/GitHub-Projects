@@ -38,6 +38,8 @@ public class InputManager : MonoBehaviour
             if (MyCard.BaseSkin.playType == BaseCardData.PlayType.Targeting && tempMousePos.y > 0.31f)
             {
                 MyCard.transform.position = MyCard.alphaPos;
+
+                // Render Targeting Arrow [Start At MousePos(CardPos)]
                 Pointer.pointer.Init();
                 Pointer.pointer.points[0] = MyCard.transform.position;
             }
@@ -47,6 +49,7 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            // if AOE Card Drag & Upper Screen's 31%
             if (IsClicked && tempMousePos.y > 0.31f
                      && MyCard.BaseSkin.playType == BaseCardData.PlayType.AOE)
             {
@@ -54,6 +57,7 @@ public class InputManager : MonoBehaviour
                 MyCard = null;
             }
 
+            // if Targetting Card Drag & Upper Screen's 31% & Target is Not null
             if (IsClicked && tempMousePos.y > 0.31f && Target != null
                     && MyCard.BaseSkin.playType == BaseCardData.PlayType.Targeting)
             {
@@ -61,6 +65,7 @@ public class InputManager : MonoBehaviour
                 MyCard = null;
             }
 
+            // Drag False
             IsClicked = false;
         }              
 
