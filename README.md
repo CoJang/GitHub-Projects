@@ -6,7 +6,7 @@ Project Moss-Maze GitHub
 - Add Hand Position Function
 - Adjust Deck (Temp Atk Card x 10)
 
-===================== 2019 / 11 / 11 =====================
+====================== 2019 / 11 / 11 =====================
 
 - Add Deck (Temp Atk Card x 5, sp Card x 1)
 - Add Hand 
@@ -15,7 +15,7 @@ Project Moss-Maze GitHub
 - Rename Prefabs
 - In "Card.cs" Add SortingGroup
 
-===================== 2019 / 11 / 09 =====================
+====================== 2019 / 11 / 09 =====================
 
 
 ======================= Comming Up =======================
