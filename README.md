@@ -30,14 +30,10 @@ Project Moss-Maze GitHub
 ======================= Comming Up =======================
 
 - Card -
-1. Discard process
-2. Hand Rotation
-3. Card’s Tooltip Real-time Fix
+1. Hand Rotation
+2. Card’s Tooltip Real-time Fix
 - Deck -
 1. Think More Method
-2. Deck Shuffle
-3. Reload Process
-4. Card Grave
 - Object -
 1. Death Process
 2. Create Objects From Code
