@@ -3,6 +3,15 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add Card Grave
+- Add Card Shuffle
+1. Shuffle From Origin DeckList
+2. Shuffle From Grave
+3. Add a New Card and Shuffle Current Deck
+- Add a Discard Process[ if you play a card from hand, that card will discard and stack at grave] 
+
+====================== 2019 / 11 / 12 =====================
+
 - Add Hand Position Function
 - Adjust Deck (Temp Atk Card x 10)
 
