@@ -90,5 +90,12 @@ public class Card : BaseCard
             InputManager.instance.MyCard = null;
         }
     }
-    
+
+    protected override void OnPlayCard()
+    {
+        base.OnPlayCard();
+
+        area = Area.Discard;
+        Grave.instance.AddToGrave(gameObject);
+    }
 }

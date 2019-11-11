@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSkin: {fileID: 11400000, guid: 1c8437dee4115274fa5ab6f8a72bd007, type: 2}
+  alphaRot: {x: 0, y: 0, z: 0, w: 0}
   alphaPos: {x: -1.27, y: -9.78, z: 0}
   alphaSort: 0
   sorting: {fileID: 91339812}
@@ -4528,6 +4529,7 @@ GameObject:
   - component: {fileID: 1799293528}
   - component: {fileID: 1799293531}
   - component: {fileID: 1799293530}
+  - component: {fileID: 1799293532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -4604,7 +4606,6 @@ MonoBehaviour:
   Cards:
   - {fileID: 7028451779764143389, guid: fb9b31417136d254e8126e166907f1e2, type: 3}
   - {fileID: 4308428434361577832, guid: 574a6677f21054c42a9efba8df3c7dcd, type: 3}
-  MidCard: {fileID: 0}
 --- !u!114 &1799293531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4619,6 +4620,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeckList: []
   curDeck: []
+--- !u!114 &1799293532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799293526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 010b58490ad7a0d4d919fd5af78a9cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1922807116
 GameObject:
   m_ObjectHideFlags: 0
@@ -4784,6 +4797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSkin: {fileID: 11400000, guid: 1c8437dee4115274fa5ab6f8a72bd007, type: 2}
+  alphaRot: {x: 0, y: 0, z: 0, w: 0}
   alphaPos: {x: -1.27, y: -9.78, z: 0}
   alphaSort: 0
   sorting: {fileID: 2005630467}
@@ -6039,6 +6053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSkin: {fileID: 11400000, guid: 1c8437dee4115274fa5ab6f8a72bd007, type: 2}
+  alphaRot: {x: 0, y: 0, z: 0, w: 0}
   alphaPos: {x: -2.8, y: -9.78, z: 0}
   alphaSort: 0
   sorting: {fileID: 1011169205572349384}
@@ -6419,6 +6434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSkin: {fileID: 11400000, guid: ff835d46eaa82af4e8b28ed6897ba679, type: 2}
+  alphaRot: {x: 0, y: 0, z: 0, w: 0}
   alphaPos: {x: 0, y: -9.78, z: 0}
   alphaSort: 0
   sorting: {fileID: 1027009624714092241}

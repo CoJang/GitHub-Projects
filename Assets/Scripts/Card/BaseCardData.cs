@@ -25,6 +25,7 @@ public class BaseCardData : ScriptableObject
 
     public int cardCost;
     public string cardName;
+    public string cardEngName;
     public int cardDamage;
 
     [TextArea(15, 20)]

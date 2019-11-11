@@ -26,15 +26,8 @@ public class DummySpellCard : Card
             //Debug.Log("Damaging " + currentDmg + " To " + objects[i].name + "");
         }
 
-        //Debug.Log(objects.Length);
+        Debug.Log(BaseSkin.cardName + " Played");
         OnPlayCard();
     }
 
-    protected override void OnPlayCard()
-    {
-        base.OnPlayCard();
-
-        Debug.Log(BaseSkin.cardName + " Played");
-        area = Area.Discard;
-    }
 }

@@ -17,15 +17,11 @@ public class DummyAttack : Card
         TargetObj = InputManager.instance.Target;
         TargetObj.DealDamage(currentDmg);
 
+        Hand.instance.CardDraw();
+
+        Debug.Log(BaseSkin.cardName + " Played");
         OnPlayCard();
     }
 
-    protected override void OnPlayCard()
-    {
-        base.OnPlayCard();
 
-        Debug.Log(BaseSkin.cardName + " Played");
-        area = Area.Discard;
-        Hand.instance.CardDraw();
-    }
 }

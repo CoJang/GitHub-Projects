@@ -25,6 +25,13 @@ public class InputManager : MonoBehaviour
             Application.Quit();
         }
 
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    //Deck.instance.DeckShuffle(Deck.ShuffleCase.ClearShuffle);
+        //    //Deck.instance.DeckShuffle(Deck.ShuffleCase.GraveToDeck);
+        //    //Deck.instance.DeckShuffle("SpellCard");
+        //}
+
         tempMousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
         tempMousePos = Camera.main.ScreenToViewportPoint(tempMousePos);
 
