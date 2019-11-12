@@ -49,6 +49,7 @@ public class Card : BaseCard
         Cardtxt[1].text = BaseSkin.cardName;
         Cardtxt[2].text = BaseSkin.cardText;
 
+
         currentDmg = BaseSkin.cardDamage;
     }
 

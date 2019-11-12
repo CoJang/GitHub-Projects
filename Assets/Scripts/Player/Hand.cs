@@ -18,11 +18,11 @@ public class Hand : MonoBehaviour
 
     void Start()
     {
-        Deck.instance.CopyDeck(Deck.ShuffleCase.ClearShuffle);
+        Deck.instance.DeckShuffle(Deck.ShuffleCase.ClearShuffle);
 
-        //CardDraw();
-        //CardDraw();
-        //CardDraw();
+        CardDraw();
+        CardDraw();
+        CardDraw();
     }
 
     public void CardDraw()
@@ -44,13 +44,6 @@ public class Hand : MonoBehaviour
 
     public void AfterDraw()
     {
-        /* 
-         * add to hand
-         * set a new card's pos, rot
-         * instansiate(create new card)
-         * set a new card's sorting group
-         * 
-         * */
         switch (cardName)
         {
             case "AttackCard":

@@ -3,6 +3,10 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add Object Death Process
+
+====================== 2019 / 11 / 13 =====================
+
 - Add Card Grave
 - Add Card Shuffle
 1. Shuffle From Origin DeckList

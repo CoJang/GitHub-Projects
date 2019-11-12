@@ -19,6 +19,7 @@ public class Objects : BaseObject
 
         Objectspr[0].sprite = BaseSkin.objectFrameSprite;
         //Objectspr[1].sprite = BaseSkin.objectSprite;
+
         // Set Visible Inside Mask
         Objectspr[1].maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
@@ -33,12 +34,16 @@ public class Objects : BaseObject
 
         currentHP -= Hitdamage;
         Debug.Log("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
+
+        if (currentHP <= 0)
+            OnDieObject();
     }
 
     protected override void OnDieObject()
     {
         base.OnDieObject();
 
+        DestroyImmediate(gameObject);
     }
 
     public virtual void DealDamage(int deal)
