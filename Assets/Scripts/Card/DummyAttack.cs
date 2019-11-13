@@ -8,6 +8,21 @@ public class DummyAttack : Card
     public override void Start()
     {
         base.Start();
+        currentDmg += Player.instance.AD;
+        ChangeColor();
+    }
+    void UpdateDamage()
+    {
+        if (Player.instance.AD > 0 || Player.instance.AD < 0)
+        {
+            ChangeColor();
+            if (currentDmg == BaseSkin.cardDamage)
+                currentDmg += Player.instance.AD;
+        }
+    }
+    new private void Update()
+    {
+        UpdateDamage();
     }
 
     public override void Play()

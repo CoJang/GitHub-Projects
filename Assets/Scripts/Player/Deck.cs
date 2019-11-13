@@ -5,8 +5,8 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     static public Deck instance;
-    public List<string> DeckList = new List<string>();
-    public List<string> curDeck = new List<string>();
+    public List<CardList.List> DeckList = new List<CardList.List>();
+    public List<CardList.List> curDeck = new List<CardList.List>();
 
     private void Awake()
     {
@@ -15,21 +15,23 @@ public class Deck : MonoBehaviour
 
     void Start()
     {
-        for(int i=0; i < 10; i++)
+        for(int i=0; i < 6; i++)
         {
-            DeckList.Add("AttackCard");
+            DeckList.Add(CardList.List.AttackCard);
         }
-        DeckList.Insert(1, "SpellCard");
-        DeckList.Insert(7, "SpellCard");
-        DeckList.Insert(9, "SpellCard");
+        DeckList.Add(CardList.List.SpellCard);
+        DeckList.Add(CardList.List.SpellCard);
+        DeckList.Add(CardList.List.SpellCard);
+        DeckList.Add(CardList.List.Focus);
+        DeckList.Add(CardList.List.Focus);
     }
 
     //public GameObject DrawRequest()
-    public string DrawRequest()
+    public CardList.List DrawRequest()
     {
         return curDeck[0];
     }
-    public string DrawRequest(int cardindex)
+    public CardList.List DrawRequest(int cardindex)
     {
         return curDeck[cardindex];
     }
@@ -56,7 +58,7 @@ public class Deck : MonoBehaviour
             case ShuffleCase.GraveToDeck:
                 for (int i = 0; i < Grave.instance.graveDeck.Count; i++)
                 {
-                    curDeck.Add(Grave.instance.graveDeck[i].GetComponent<Card>().BaseSkin.cardEngName);
+                    curDeck.Add(Grave.instance.graveDeck[i]);
                 }
                 break;
         }
@@ -75,7 +77,7 @@ public class Deck : MonoBehaviour
                 for(int i = DeckList.Count; i > 1; i--)
                 {
                     int s = Random.Range(0, i);
-                    string t = curDeck[s];
+                    CardList.List t = curDeck[s];
                     curDeck[s] = curDeck[i - 1];
                     curDeck[i - 1] = t;
                 }
@@ -86,7 +88,7 @@ public class Deck : MonoBehaviour
                 for (int i = Grave.instance.graveDeck.Count; i > 1; i--)
                 {
                     int s = Random.Range(0, i);
-                    string t = curDeck[s];
+                    CardList.List t = curDeck[s];
                     curDeck[s] = curDeck[i - 1];
                     curDeck[i - 1] = t;
                 }
@@ -94,14 +96,14 @@ public class Deck : MonoBehaviour
         }
     }
     // Do Not Clear Current Deck, Add a Card and Shuffle 
-    public void DeckShuffle(string cardname)
+    public void DeckShuffle(CardList.List cardname)
     {
         curDeck.Add(cardname);
 
         for (int i = curDeck.Count; i > 1; i--)
         {
             int s = Random.Range(0, i);
-            string t = curDeck[s];
+            CardList.List t = curDeck[s];
             curDeck[s] = curDeck[i - 1];
             curDeck[i - 1] = t;
         }

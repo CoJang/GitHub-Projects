@@ -7,9 +7,9 @@ public class Hand : MonoBehaviour
 {
     static public Hand instance;
     public List<GameObject> MyHand;
-    private string cardName;
+    private CardList.List cardName;
 
-    public GameObject[] Cards = new GameObject[2];
+    [SerializeField] GameObject[] Cards = new GameObject[sizeof(CardList.List)];
 
     private void Awake()
     {
@@ -44,18 +44,24 @@ public class Hand : MonoBehaviour
 
     public void AfterDraw()
     {
-        switch (cardName)
-        {
-            case "AttackCard":
-                MyHand.Add(Instantiate(Cards[0], MidCardPos, MidCardRot));
-                break;
-            case "SpellCard":
-                MyHand.Add(Instantiate(Cards[1], MidCardPos, MidCardRot));
-                break;
-            default:
-                Debug.LogError("Unknown Card!");
-                break;
-        }
+        //switch (cardName)
+        //{
+        //    case CardList.List.AttackCard:
+        //        MyHand.Add(Instantiate(Cards[0], MidCardPos, MidCardRot));
+        //        break;
+        //    case CardList.List.SpellCard:
+        //        MyHand.Add(Instantiate(Cards[1], MidCardPos, MidCardRot));
+        //        break;
+        //    case CardList.List.Focus:
+        //        //MyHand.Add(Instantiate(Cards[2], MidCardPos, MidCardRot));
+        //        break;
+        //    case CardList.List.None:
+        //    default:
+        //        Debug.LogError("Unknown Card!");
+        //        break;
+        //}
+
+        MyHand.Add(Instantiate(CardList.instance.ReturnObj(cardName)));
 
         SortingCardsInHand();
     }
@@ -188,7 +194,7 @@ public class Hand : MonoBehaviour
     public void Discard(int cardindex)
     { 
         DestroyImmediate(MyHand[cardindex]);
-
+        SortingCardsInHand();
     }
 
 }

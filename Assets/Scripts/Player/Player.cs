@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Player : Objects
 {
+    static public Player instance;
+    public int AP = 0;
+    public int AD = 0;
 
-    new void Start()
+    //private int APD = 0;
+    //private int ADD = 0;
+
+    private void Awake()
     {
-        
+        instance = this;
+    }
+    protected override void Start()
+    {
+        base.Start();
     }
 
     void Update()

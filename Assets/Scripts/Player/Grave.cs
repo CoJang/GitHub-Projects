@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grave : MonoBehaviour
 {
     static public Grave instance;
-    public List<GameObject> graveDeck = new List<GameObject>();
+    public List<CardList.List> graveDeck = new List<CardList.List>();
     void Awake()
     {
         instance = this;
@@ -18,7 +18,7 @@ public class Grave : MonoBehaviour
 
     public void AddToGrave(GameObject card)
     {
-        graveDeck.Add(card);
+        graveDeck.Add(card.GetComponent<Card>().BaseSkin.cardEngName);
         Hand.instance.MyHand.RemoveAt(card.GetComponent<Card>().alphaSort);
         DestroyImmediate(card);
 

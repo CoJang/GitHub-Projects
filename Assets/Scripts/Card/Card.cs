@@ -20,6 +20,9 @@ public class Card : BaseCard
     private float CardUpPosFactor = 3.7f;
 
     protected int currentDmg;
+    protected string curDmgColor;
+    protected int currentCost;
+    protected string curCostColor;
 
     public enum Area
     {
@@ -35,6 +38,10 @@ public class Card : BaseCard
     {
         base.OnSkinCard();
 
+        currentDmg = BaseSkin.cardDamage;
+        currentCost = BaseSkin.cardCost;
+        curCostColor = "<color=#FFFFFF>";
+        curDmgColor = "<color=#323232>";
         // Sprites [0] = InnerSprite, [1] = FrameSprite [2] = Cost Gemstone Sprite
         Cardspr = GetComponentsInChildren<SpriteRenderer>();
 
@@ -45,12 +52,10 @@ public class Card : BaseCard
         // [0] = Cost, [1] = Name, [2] = Text
         Cardtxt = GetComponentsInChildren<TextMeshPro>();
 
-        Cardtxt[0].text = BaseSkin.cardCost.ToString();
+        Cardtxt[0].text = curCostColor + BaseSkin.cardCost.ToString();
         Cardtxt[1].text = BaseSkin.cardName;
-        Cardtxt[2].text = BaseSkin.cardText;
+        Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + BaseSkin.cardDamage + BaseSkin.cardText;
 
-
-        currentDmg = BaseSkin.cardDamage;
     }
 
     public virtual void Start()
@@ -76,7 +81,6 @@ public class Card : BaseCard
     {
         //Back To Origin Position In Hand
         transform.position = alphaPos;
-         //transform.position = alphaTrans.position;
     }
     protected virtual void OnMouseExit()
     {
@@ -98,5 +102,69 @@ public class Card : BaseCard
 
         area = Area.Discard;
         Grave.instance.AddToGrave(gameObject);
+    }
+
+    public enum TextType
+    {
+        Cost,
+        Damage
+    }
+    public void ChangeColor(TextType type)
+    {
+        switch(type)
+        {
+            case TextType.Cost:
+                if (currentCost < BaseSkin.cardCost)
+                {
+                    curCostColor = "<color=green>";
+                    Cardtxt[0].text = curCostColor + currentCost.ToString();
+                }
+                else if (currentCost > BaseSkin.cardCost)
+                {
+                    curCostColor = "<color=red>";
+                    Cardtxt[0].text = curCostColor + currentCost.ToString();
+                }
+                break;
+            case TextType.Damage:
+                if (currentDmg < BaseSkin.cardDamage)
+                {
+                    curDmgColor = "<color=red>";
+                    Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + currentDmg + BaseSkin.cardText;
+                }
+                else if (currentDmg > BaseSkin.cardDamage)
+                {
+                    curDmgColor = "<color=green>";
+                    Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + currentDmg + BaseSkin.cardText;
+                }
+                break;
+        }
+    }
+    public void ChangeColor()
+    {
+        if (currentCost < BaseSkin.cardCost)
+        {
+            curCostColor = "<color=green>";
+            Cardtxt[0].text = curCostColor + currentCost.ToString();
+        }
+        else if (currentCost > BaseSkin.cardCost)
+        {
+            curCostColor = "<color=red>";
+            Cardtxt[0].text = curCostColor + currentCost.ToString();
+        }
+        else curCostColor = "<color=#FFFFFF>";
+
+        if (currentDmg < BaseSkin.cardDamage)
+        {
+            curDmgColor = "<color=red>";
+            Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + currentDmg + BaseSkin.cardText;
+        }
+        else if (currentDmg > BaseSkin.cardDamage)
+        {
+            //curDmgColor = "<color=green>";
+            curDmgColor = "<color=blue>";
+            Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + currentDmg + BaseSkin.cardText;
+        }
+        else curDmgColor = "<color=#323232>";
+
     }
 }

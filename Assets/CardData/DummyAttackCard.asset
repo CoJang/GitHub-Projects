@@ -17,8 +17,9 @@ MonoBehaviour:
   cardSprite: {fileID: 21300000, guid: e17421b8d1e107242ad3c989eb4ca453, type: 3}
   cardGemSprite: {fileID: 21300000, guid: 2ab120cb41c8512479445c447f5a96b7, type: 3}
   cardCost: 0
-  cardName: "\uB354\uBBF8 \uACF5\uACA9 \uCE74\uB4DC"
-  cardEngName: AttackCard
   cardDamage: 1
-  cardText: "\uB300\uC0C1\uC5D0\uAC8C 1\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 \uCE74\uB4DC\uB97C
-    \uD55C \uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."
+  cardName: "\uB354\uBBF8 \uACF5\uACA9 \uCE74\uB4DC"
+  cardEngName: 1
+  cardpreText: "\uB300\uC0C1\uC5D0\uAC8C "
+  cardText: "</color>\uC758 \uD53C\uD574\uB97C \uC8FC\uACE0 \uCE74\uB4DC\uB97C \uD55C
+    \uC7A5 \uBF51\uC2B5\uB2C8\uB2E4."

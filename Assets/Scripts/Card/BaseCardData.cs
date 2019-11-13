@@ -24,11 +24,13 @@ public class BaseCardData : ScriptableObject
     //public SpriteState cardSpriteState;
 
     public int cardCost;
-    public string cardName;
-    public string cardEngName;
     public int cardDamage;
+    public string cardName;
+    public CardList.List cardEngName;
 
-    [TextArea(15, 20)]
+    [TextArea(5, 5)]
+    public string cardpreText;
+    [TextArea(15, 10)]
     public string cardText;
 
 }

@@ -11,8 +11,25 @@ public class DummySpellCard : Card
     public override void Start()
     {
         base.Start();
+        currentDmg += Player.instance.AP;
+        ChangeColor();
     }
-    
+
+    void UpdateDamage()
+    {
+        if (Player.instance.AP > 0 || Player.instance.AP < 0)
+        {
+            ChangeColor();
+            if(currentDmg == BaseSkin.cardDamage)
+                currentDmg += Player.instance.AP;
+        }
+    }
+
+    new private void Update()
+    {
+        UpdateDamage();
+    }
+
     public override void Play()
     {
         base.Play();
@@ -26,8 +43,14 @@ public class DummySpellCard : Card
             //Debug.Log("Damaging " + currentDmg + " To " + objects[i].name + "");
         }
 
-        Debug.Log(BaseSkin.cardName + " Played");
+        //Debug.Log(BaseSkin.cardName + " Played");
         OnPlayCard();
+    }
+
+    protected override void OnPlayCard()
+    {
+        base.OnPlayCard();
+        Player.instance.AP++;
     }
 
 }

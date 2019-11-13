@@ -3,6 +3,13 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add CardList
+- Re-Factoring Grave, Hand [Bind with CardList]
+- Edite BaseCardData [cardEngName type : string -> enum CardList]
+- Realtime Card Text & Color Change Added
+
+====================== 2019 / 11 / 14 =====================
+
 - Add Object Death Process
 
 ====================== 2019 / 11 / 13 =====================
@@ -35,9 +42,18 @@ Project Moss-Maze GitHub
 
 - Card -
 1. Hand Rotation
-2. Card’s Tooltip Real-time Fix
-- Deck -
-1. Think More Method
+
 - Object -
 1. Death Process
 2. Create Objects From Code
+
+- Phase -
+1. Editing Phases
+
+- Enemy -
+1. Attack AI [with phase]
+
+- Player -
+1. Armour & AP Armour
+2. Cost System
+3. Phase
