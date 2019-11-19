@@ -3,6 +3,39 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add Phase [ Draw, My, Enemy Phase ]
+- Add End Turn Button
+- Add Grave Shuffle When Current Deck Empty
+- Add Discard Process When End Your Turn
+- Add End Button Sprite Change ( If You Can't Play Any Card, Button will Shine )
+- Fix Damage Update Code ( Ap, Ad )
+- Add UI Scripts
+- Update Visuals [ Background, Player Sprite ]
+- Add Player Sprites
+
+====================== 2019 / 11 / 20 =====================
+
+======================= Comming Up =======================
+
+- Card -
+1. Hand Rotation
+
+- Object -
+1. Create Objects From Code
+
+- Enemy -
+1. Attack AI [with phase]
+
+- Player -
+1. Armour & AP Armour
+2. Animation
+
+- UI -
+1. Player ActionPoint HUD (Cost)
+2. Player / Enemy HP HUD
+
+======================= Updated List ======================
+
 - Add CardList
 - Re-Factoring Grave, Hand [Bind with CardList]
 - Edite BaseCardData [cardEngName type : string -> enum CardList]
@@ -38,22 +71,3 @@ Project Moss-Maze GitHub
 ====================== 2019 / 11 / 09 =====================
 
 
-======================= Comming Up =======================
-
-- Card -
-1. Hand Rotation
-
-- Object -
-1. Death Process
-2. Create Objects From Code
-
-- Phase -
-1. Editing Phases
-
-- Enemy -
-1. Attack AI [with phase]
-
-- Player -
-1. Armour & AP Armour
-2. Cost System
-3. Phase

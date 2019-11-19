@@ -38,6 +38,8 @@ public class PhaseManager : MonoBehaviour
         if (Phase == PHASE.MyPhase)
         {
             Phase = PHASE.EnemyPhase;
+            Hand.instance.DiscardAll();
+
             endTurnBT.GetComponent<SpriteRenderer>().sprite
                 = endTurnBT.GetComponent<EndTurnBT>().sprites[2];
         }

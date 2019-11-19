@@ -180,13 +180,13 @@ public class Hand : MonoBehaviour
         SortingCardsInHand();
     }
 
-    //public void DiscardAll()
-    //{
-    //    for (int i = 0; i < MyHand.Count; i++)
-    //    {
-            
-    //    }
-    //}
+    public void DiscardAll()
+    {
+        for (int i = MyHand.Count - 1; i > -1; i--)
+        {
+            Grave.instance.AddToGrave(MyHand[i]);
+        }
+    }
 
     public bool CanPlayAnyCard()
     {

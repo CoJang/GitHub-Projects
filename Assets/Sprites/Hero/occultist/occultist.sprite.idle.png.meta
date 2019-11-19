@@ -1,0 +1,667 @@
+fileFormatVersion: 2
+guid: da1d10dabf5ab8f44b1c69b71ea36768
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -635610201059394805
+    second: occultist.sprite.idle_0
+  - first:
+      213: 212401034738925847
+    second: occultist.sprite.idle_1
+  - first:
+      213: -2245000989729325107
+    second: occultist.sprite.idle_2
+  - first:
+      213: -4041371481401644055
+    second: occultist.sprite.idle_3
+  - first:
+      213: 6309176086185816119
+    second: occultist.sprite.idle_4
+  - first:
+      213: -870050120417445812
+    second: occultist.sprite.idle_5
+  - first:
+      213: 4618226550853519816
+    second: occultist.sprite.idle_6
+  - first:
+      213: 7881507434172739323
+    second: occultist.sprite.idle_7
+  - first:
+      213: 2943762981432682516
+    second: occultist.sprite.idle_8
+  - first:
+      213: 725822677220513364
+    second: occultist.sprite.idle_9
+  - first:
+      213: 3998498653397429430
+    second: occultist.sprite.idle_10
+  - first:
+      213: 58565022898050792
+    second: occultist.sprite.idle_11
+  - first:
+      213: 7736575558567868524
+    second: occultist.sprite.idle_12
+  - first:
+      213: 8752430350152890739
+    second: occultist.sprite.idle_13
+  - first:
+      213: 6033593904803474996
+    second: occultist.sprite.idle_14
+  - first:
+      213: 4291562098246648778
+    second: occultist.sprite.idle_15
+  - first:
+      213: -6036714142007583543
+    second: occultist.sprite.idle_16
+  - first:
+      213: -5501907413149981961
+    second: occultist.sprite.idle_17
+  - first:
+      213: 2833238615438644016
+    second: occultist.sprite.idle_18
+  - first:
+      213: -5237862224813215619
+    second: occultist.sprite.idle_19
+  - first:
+      213: -4367192729831205642
+    second: occultist.sprite.idle_20
+  - first:
+      213: -7728246056754343778
+    second: occultist.sprite.idle_21
+  - first:
+      213: 3757480503966829167
+    second: occultist.sprite.idle_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: occultist.sprite.idle_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 213
+        width: 138
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cde9d78bbf7857f49b8bb6ff9951a027
+      internalID: -635610201059394805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 213
+        width: 25
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5df777ddd7d77e4b9236b350a92b427
+      internalID: 212401034738925847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 152
+        width: 121
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cd474433dda7647856736bdb1b1dac
+      internalID: -2245000989729325107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 245
+        width: 76
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2648b53d5da7247b6c1b346b6675a4
+      internalID: -4041371481401644055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_4
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 245
+        width: 49
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb5274105b29344482a547f4a7ca5c1
+      internalID: 6309176086185816119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_5
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 199
+        width: 132
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86e592add4848604ca6fa551101c787c
+      internalID: -870050120417445812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_6
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 242
+        width: 57
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a04e0ab53cbbc7e4bbc4d50c22150ce7
+      internalID: 4618226550853519816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_7
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 188
+        width: 102
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d31329742291c8498a32da36abb6eea
+      internalID: 7881507434172739323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_8
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 200
+        width: 138
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b4bd53fbcc372c4ea1aa1c92a1e335d
+      internalID: 2943762981432682516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_9
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 200
+        width: 86
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60b0ce1ccb9c3840a713e8fb3c2fda5
+      internalID: 725822677220513364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_10
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 223
+        width: 42
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11dbf263b9e5c4f4180118a88980871d
+      internalID: 3998498653397429430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_11
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 163
+        width: 150
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af3f5de26f3d2f34a9c5749f146bf684
+      internalID: 58565022898050792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_12
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 204
+        width: 135
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807eb04060f17b742ad29ce6000a30ce
+      internalID: 7736575558567868524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_13
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 199
+        width: 121
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f75aa52fc160b3418ff070914993024
+      internalID: 8752430350152890739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_14
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 67
+        width: 45
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edae79c49775200449d5d1d9dc1cb649
+      internalID: 6033593904803474996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_15
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 169
+        width: 140
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a38273a0d7d6b9c48bc6d186950bd8b7
+      internalID: 4291562098246648778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_16
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 141
+        width: 264
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f015293a4a5fb447af802597948c851
+      internalID: -6036714142007583543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_17
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 67
+        width: 202
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2680bade67af739488623101ace442a7
+      internalID: -5501907413149981961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_18
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 67
+        width: 116
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4db57c902cd905146a3d890d87b267c9
+      internalID: 2833238615438644016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_19
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 166
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba01a7840d5898841a9bd48b3418c020
+      internalID: -5237862224813215619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_20
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2
+        width: 264
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac6e4b342d064446b6264eeef0c09df
+      internalID: -4367192729831205642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_21
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 2
+        width: 281
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a06d7089dfea54b8d00fa58c93513f
+      internalID: -7728246056754343778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: occultist.sprite.idle_22
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 2
+        width: 357
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16445ea3aa108b41b63af5317ecf47c
+      internalID: 3757480503966829167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
