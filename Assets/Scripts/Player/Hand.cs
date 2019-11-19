@@ -9,8 +9,6 @@ public class Hand : MonoBehaviour
     public List<GameObject> MyHand;
     private CardList.List cardName;
 
-    [SerializeField] GameObject[] Cards = new GameObject[sizeof(CardList.List)];
-
     private void Awake()
     {
         instance = this;
@@ -27,7 +25,9 @@ public class Hand : MonoBehaviour
 
     public void CardDraw()
     {
-        if (Deck.instance.curDeck.Count < 1) return;
+        if (Deck.instance.curDeck.Count < 1)
+            Deck.instance.DeckShuffle(Deck.ShuffleCase.GraveToDeck);
+
         cardName = Deck.instance.DrawRequest();
         Deck.instance.ClearFromDeck();
 
@@ -44,23 +44,6 @@ public class Hand : MonoBehaviour
 
     public void AfterDraw()
     {
-        //switch (cardName)
-        //{
-        //    case CardList.List.AttackCard:
-        //        MyHand.Add(Instantiate(Cards[0], MidCardPos, MidCardRot));
-        //        break;
-        //    case CardList.List.SpellCard:
-        //        MyHand.Add(Instantiate(Cards[1], MidCardPos, MidCardRot));
-        //        break;
-        //    case CardList.List.Focus:
-        //        //MyHand.Add(Instantiate(Cards[2], MidCardPos, MidCardRot));
-        //        break;
-        //    case CardList.List.None:
-        //    default:
-        //        Debug.LogError("Unknown Card!");
-        //        break;
-        //}
-
         MyHand.Add(Instantiate(CardList.instance.ReturnObj(cardName)));
 
         SortingCardsInHand();
@@ -136,7 +119,7 @@ public class Hand : MonoBehaviour
         }
         else Debug.LogError(MyHand.Count);
 
-
+        PhaseManager.instance.CanPlay();
     }
     public enum CardPosition
     {
@@ -197,4 +180,21 @@ public class Hand : MonoBehaviour
         SortingCardsInHand();
     }
 
+    //public void DiscardAll()
+    //{
+    //    for (int i = 0; i < MyHand.Count; i++)
+    //    {
+            
+    //    }
+    //}
+
+    public bool CanPlayAnyCard()
+    {
+        for(int i = 0; i < MyHand.Count; i++)
+        {
+            if (MyHand[i].GetComponent<Card>().currentCost <= Player.instance.ActionPoint)
+                return true;
+        }
+        return false;
+    }
 }

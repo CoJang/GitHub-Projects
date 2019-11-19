@@ -8,6 +8,7 @@ TagManager:
   - SpellCard
   - Card
   - EnemyObject
+  - TurnButton
   layers:
   - Default
   - TransparentFX

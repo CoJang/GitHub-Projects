@@ -33,7 +33,7 @@ public class Objects : BaseObject
         base.OnDamageObject(Hitdamage);
 
         currentHP -= Hitdamage;
-        Debug.Log("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
+        Debug.LogError("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
 
         if (currentHP <= 0)
             OnDieObject();

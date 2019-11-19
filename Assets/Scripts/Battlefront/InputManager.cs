@@ -6,6 +6,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     static public InputManager instance;
+    public UIButton UI;
     public Objects Target;
     public Card MyCard;
 
@@ -31,6 +32,7 @@ public class InputManager : MonoBehaviour
         //    //Deck.instance.DeckShuffle(Deck.ShuffleCase.GraveToDeck);
         //    //Deck.instance.DeckShuffle("SpellCard");
         //}
+        if (PhaseManager.instance.Phase != PhaseManager.PHASE.MyPhase) return;
 
         tempMousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);
         tempMousePos = Camera.main.ScreenToViewportPoint(tempMousePos);
@@ -60,7 +62,7 @@ public class InputManager : MonoBehaviour
             if (IsClicked && tempMousePos.y > 0.31f
                      && MyCard.BaseSkin.playType == BaseCardData.PlayType.AOE)
             {
-                MyCard.Play();
+                PlayCard();
                 MyCard = null;
             }
 
@@ -68,7 +70,7 @@ public class InputManager : MonoBehaviour
             if (IsClicked && tempMousePos.y > 0.31f && Target != null
                     && MyCard.BaseSkin.playType == BaseCardData.PlayType.Targeting)
             {
-                MyCard.Play();
+                PlayCard();
                 MyCard = null;
             }
 
@@ -80,5 +82,13 @@ public class InputManager : MonoBehaviour
     public bool GetMouseState()
     {
         return IsClicked;
+    }
+
+    public void PlayCard()
+    {
+        if (MyCard.BeforePlayCard())
+            MyCard.Play();
+        else
+            Debug.LogError("Not Enough Cost!");
     }
 }

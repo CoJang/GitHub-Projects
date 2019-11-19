@@ -8,16 +8,16 @@ public class DummyAttack : Card
     public override void Start()
     {
         base.Start();
-        currentDmg += Player.instance.AD;
+        currentDmg = BaseSkin.cardDamage + Player.instance.AD;
         ChangeColor();
     }
     void UpdateDamage()
     {
         if (Player.instance.AD > 0 || Player.instance.AD < 0)
         {
+            if (currentDmg != BaseSkin.cardDamage + Player.instance.AD)
+                currentDmg = BaseSkin.cardDamage + Player.instance.AD;
             ChangeColor();
-            if (currentDmg == BaseSkin.cardDamage)
-                currentDmg += Player.instance.AD;
         }
     }
     new private void Update()
@@ -34,7 +34,7 @@ public class DummyAttack : Card
 
         Hand.instance.CardDraw();
 
-        Debug.Log(BaseSkin.cardName + " Played");
+        Debug.LogError(BaseSkin.cardName + " Played");
         OnPlayCard();
     }
 

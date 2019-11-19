@@ -21,7 +21,7 @@ public class Card : BaseCard
 
     protected int currentDmg;
     protected string curDmgColor;
-    protected int currentCost;
+    public int currentCost;
     protected string curCostColor;
 
     public enum Area
@@ -54,8 +54,10 @@ public class Card : BaseCard
 
         Cardtxt[0].text = curCostColor + BaseSkin.cardCost.ToString();
         Cardtxt[1].text = BaseSkin.cardName;
-        Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + BaseSkin.cardDamage + BaseSkin.cardText;
-
+        if (currentDmg != 0)
+            Cardtxt[2].text = BaseSkin.cardpreText + curDmgColor + BaseSkin.cardDamage + BaseSkin.cardText;
+        else
+            Cardtxt[2].text = BaseSkin.cardpreText + BaseSkin.cardText;
     }
 
     public virtual void Start()
@@ -99,7 +101,11 @@ public class Card : BaseCard
     protected override void OnPlayCard()
     {
         base.OnPlayCard();
+        Discard();
+    }
 
+    protected virtual void Discard()
+    {
         area = Area.Discard;
         Grave.instance.AddToGrave(gameObject);
     }
@@ -166,5 +172,15 @@ public class Card : BaseCard
         }
         else curDmgColor = "<color=#323232>";
 
+    }
+
+    public bool BeforePlayCard()
+    {
+        if(Player.instance.OnAction(currentCost))
+        {
+            return true;
+        }
+
+        return false;
     }
 }

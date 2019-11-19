@@ -92,6 +92,7 @@ public class Deck : MonoBehaviour
                     curDeck[s] = curDeck[i - 1];
                     curDeck[i - 1] = t;
                 }
+                Grave.instance.graveDeck.Clear();
                 break;
         }
     }

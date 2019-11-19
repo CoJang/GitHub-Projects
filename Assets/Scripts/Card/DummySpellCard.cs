@@ -11,7 +11,7 @@ public class DummySpellCard : Card
     public override void Start()
     {
         base.Start();
-        currentDmg += Player.instance.AP;
+        currentDmg = BaseSkin.cardDamage + Player.instance.AP;
         ChangeColor();
     }
 
@@ -19,9 +19,9 @@ public class DummySpellCard : Card
     {
         if (Player.instance.AP > 0 || Player.instance.AP < 0)
         {
+            if (currentDmg != BaseSkin.cardDamage + Player.instance.AP)
+                currentDmg = BaseSkin.cardDamage + Player.instance.AP;
             ChangeColor();
-            if(currentDmg == BaseSkin.cardDamage)
-                currentDmg += Player.instance.AP;
         }
     }
 

@@ -17,7 +17,7 @@ public class Focus : Card
         Hand.instance.CardDraw();
         Hand.instance.CardDraw();
 
-        Debug.Log(BaseSkin.cardName + " Played");
+        Debug.LogError(BaseSkin.cardName + " Played");
         OnPlayCard();
     }
 }
