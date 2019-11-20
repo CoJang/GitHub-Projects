@@ -53,34 +53,8 @@ public class Hand : MonoBehaviour
     {
         if (MyHand.Count == 0)
         { }
-        else if (MyHand.Count == 1)
-        {
-            SetPosition(0, CardPosition.Center);
-        }
-        else if (MyHand.Count == 2)
-        {
-            SetPosition(0, CardPosition.Left);
-            SetPosition(1, CardPosition.Right);
-        }
-        else if (MyHand.Count == 3)
-        {
-            SetPosition(0, new Vector3(MidCardPos.x - 2.8f, MidCardPos.y, MidCardPos.z));
-            SetRotation(0, new Quaternion(MidCardRot.x, MidCardRot.y, MidCardRot.z, 1));
-            SetPosition(1, CardPosition.Center);
-            SetPosition(2, new Vector3(MidCardPos.x + 2.8f, MidCardPos.y, MidCardPos.z));
-            SetRotation(2, new Quaternion(MidCardRot.x, MidCardRot.y, MidCardRot.z, 1));
-        }
-        else if (MyHand.Count == 4)
-        {
-            SetPosition(0, new Vector3(LeftCenter.x - 2.8f, LeftCenter.y, LeftCenter.z));
-            SetRotation(0, new Quaternion(LeftCenterRot.x, LeftCenterRot.y, LeftCenterRot.z, 1));
-            SetPosition(1, CardPosition.Left);
-            SetPosition(2, CardPosition.Right);
-            SetPosition(3, new Vector3(RightCenter.x + 2.8f, RightCenter.y, RightCenter.z));
-            SetRotation(3, new Quaternion(RightCenterRot.x, RightCenterRot.y, RightCenterRot.z, 1));
-        }
         // if MyHand Upper 4, And Odd Number  
-        else if (MyHand.Count > 4 && (MyHand.Count % 2) == 1)
+        else if (MyHand.Count % 2 == 1)
         {
             for (int i = 0; i < MyHand.Count / 2; i++)
             {
@@ -98,7 +72,7 @@ public class Hand : MonoBehaviour
         }
 
         // if MyHand Upper 4, And Even Number 
-        else if (MyHand.Count > 4 && (MyHand.Count % 2) == 0)
+        else if (MyHand.Count % 2 == 0)
         {
             SetPosition(MyHand.Count / 2 - 1, CardPosition.Left);
 

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0108c8b3d5c2e0340a90df1eacfc1787, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  objectFrameSprite: {fileID: -6287787046888575383, guid: 32983040aa76bfc46997a2230f9d80a6,
+  objectFrameSprite: {fileID: -4709456396536258026, guid: 32983040aa76bfc46997a2230f9d80a6,
     type: 3}
-  objectSprite: {fileID: -6287787046888575383, guid: 32983040aa76bfc46997a2230f9d80a6,
+  objectSprite: {fileID: -1182821291677670348, guid: 32983040aa76bfc46997a2230f9d80a6,
     type: 3}
-  objectMask: {fileID: 21300000, guid: d7098c944e701b248a532b7015df2e3d, type: 3}
-  objectBloodVessel: {fileID: 0}
+  objectMask: {fileID: 21300000, guid: 3515cba0917f26c4eaf8c1d1d6217a3f, type: 3}
+  objectBloodVessel: {fileID: 21300000, guid: e17421b8d1e107242ad3c989eb4ca453, type: 3}
   BaseHP: 10
   BaseDamege: 0

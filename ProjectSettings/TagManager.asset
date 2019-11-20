@@ -52,6 +52,9 @@ TagManager:
   - name: MyCard
     uniqueID: 442988239
     locked: 0
+  - name: Player
+    uniqueID: 585730141
+    locked: 0
   - name: InnerSprite
     uniqueID: 2801092897
     locked: 0
@@ -66,6 +69,9 @@ TagManager:
     locked: 0
   - name: Effect
     uniqueID: 2373638905
+    locked: 0
+  - name: UI
+    uniqueID: 3999228597
     locked: 0
   - name: Default
     uniqueID: 0

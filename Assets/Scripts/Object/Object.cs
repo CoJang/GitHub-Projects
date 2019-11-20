@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Objects : BaseObject
 {
+    ///<summary> Sprites [0] = InnerSprite, [1] = FrameSprite </summary>
     protected SpriteRenderer[] Objectspr;
     protected SpriteMask      Objectmask;
 
@@ -13,8 +14,7 @@ public class Objects : BaseObject
     protected override void OnSkinObject()
     {
         base.OnSkinObject();
-
-        // Sprites [0] = InnerSprite, [1] = FrameSprite
+        
         Objectspr = GetComponentsInChildren<SpriteRenderer>();
 
         Objectspr[0].sprite = BaseSkin.objectFrameSprite;
@@ -24,6 +24,7 @@ public class Objects : BaseObject
         Objectspr[1].maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
 
+        if (GetComponentInChildren<SpriteMask>() == null) return;
         Objectmask = GetComponentInChildren<SpriteMask>();
         Objectmask.sprite = BaseSkin.objectMask;
     }

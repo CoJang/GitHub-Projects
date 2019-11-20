@@ -44,7 +44,9 @@ public class PhaseManager : MonoBehaviour
                 = endTurnBT.GetComponent<EndTurnBT>().sprites[2];
         }
     }
-
+    /// <summary>
+    /// Check Player's Hand. If You Can't Play Any Card, EndButton Will Shine
+    /// </summary>
     public void CanPlay()
     {
         if(Phase == PHASE.MyPhase && Hand.instance.CanPlayAnyCard())

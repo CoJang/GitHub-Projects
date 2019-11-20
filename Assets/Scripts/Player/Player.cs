@@ -7,7 +7,7 @@ public class Player : Objects
     static public Player instance;
     public int AP = 0;
     public int AD = 0;
-    public int ActionPoint = 4;
+    public int ActionPoint = 0;
 
     private int AP_heal = 4;
     private int MaxAP = 6;
@@ -22,15 +22,13 @@ public class Player : Objects
     {
         base.Start();
     }
-
-    void Update()
-    {
-        
-    }
+    protected override void OnSkinObject() { }
 
     protected override void OnDieObject()
     {
         base.OnDieObject();
+        Debug.LogError("Game Over!");
+        PhaseManager.instance.Phase = PhaseManager.PHASE.EnemyPhase;
     }
 
     protected override void OnDamageObject(int Hitdamage)
