@@ -15,18 +15,18 @@ public class Objects : BaseObject
     {
         base.OnSkinObject();
         
-        Objectspr = GetComponentsInChildren<SpriteRenderer>();
+        //Objectspr = GetComponentsInChildren<SpriteRenderer>();
 
-        Objectspr[0].sprite = BaseSkin.objectFrameSprite;
-        //Objectspr[1].sprite = BaseSkin.objectSprite;
+        //Objectspr[0].sprite = BaseSkin.objectFrameSprite;
+        ////Objectspr[1].sprite = BaseSkin.objectSprite;
 
-        // Set Visible Inside Mask
-        Objectspr[1].maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+        //// Set Visible Inside Mask
+        //Objectspr[1].maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 
 
-        if (GetComponentInChildren<SpriteMask>() == null) return;
-        Objectmask = GetComponentInChildren<SpriteMask>();
-        Objectmask.sprite = BaseSkin.objectMask;
+        //if (GetComponentInChildren<SpriteMask>() == null) return;
+        //Objectmask = GetComponentInChildren<SpriteMask>();
+        //Objectmask.sprite = BaseSkin.objectMask;
     }
 
     protected override void OnDamageObject(int Hitdamage)

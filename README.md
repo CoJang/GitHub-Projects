@@ -3,6 +3,15 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add Deck Count UI -> Deck.cs Moved to Deck UI from Player
+- Add Grave Count UI -> Grave.cs Moved to Grave UI from Player
+- Update Enemy Sprite [Temporary Disable Object.cs - OnSkin()]
+- Fix Sprite Anchor & Image file
+
+====================== 2019 / 11 / 21 =====================
+
+======================= Updated List ======================
+
 - Add Phase [ Draw, My, Enemy Phase ]
 - Add End Turn Button
 - Add Grave Shuffle When Current Deck Empty
@@ -14,27 +23,6 @@ Project Moss-Maze GitHub
 - Add Player Sprites
 
 ====================== 2019 / 11 / 20 =====================
-
-======================= Comming Up =======================
-
-- Card -
-1. Hand Rotation
-
-- Object -
-1. Create Objects From Code
-
-- Enemy -
-1. Attack AI [with phase]
-
-- Player -
-1. Armour & AP Armour
-2. Animation
-
-- UI -
-1. Player ActionPoint HUD (Cost)
-2. Player / Enemy HP HUD
-
-======================= Updated List ======================
 
 - Add CardList
 - Re-Factoring Grave, Hand [Bind with CardList]

@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Deck : MonoBehaviour
 {
     static public Deck instance;
     public List<CardList.List> DeckList = new List<CardList.List>();
     public List<CardList.List> curDeck = new List<CardList.List>();
+
+    public TextMeshPro count;
 
     private void Awake()
     {
@@ -15,7 +18,10 @@ public class Deck : MonoBehaviour
 
     void Start()
     {
-        for(int i=0; i < 6; i++)
+        if (count == null)
+            count = gameObject.GetComponentInChildren<TextMeshPro>();
+
+        for (int i=0; i < 6; i++)
         {
             DeckList.Add(CardList.List.AttackCard);
         }
@@ -29,6 +35,7 @@ public class Deck : MonoBehaviour
     //public GameObject DrawRequest()
     public CardList.List DrawRequest()
     {
+        count.text = DeckList.Count.ToString();
         return curDeck[0];
     }
     public CardList.List DrawRequest(int cardindex)
@@ -64,9 +71,11 @@ public class Deck : MonoBehaviour
         }
     }
 
-    // Clear Current Deck And Shuffle
-    // GraveToDeck = Shuffle From Grave[source]
-    // ClearShuffle = Shuffle From Origin DeckList
+    /// <summary> 
+    /// Clear Current Deck And Shuffle
+    /// GraveToDeck = Shuffle From Grave[source]
+    /// ClearShuffle = Shuffle From Origin DeckList
+    /// </summary>
     public void DeckShuffle(ShuffleCase shuffle)
     {
         switch(shuffle)
@@ -96,7 +105,8 @@ public class Deck : MonoBehaviour
                 break;
         }
     }
-    // Do Not Clear Current Deck, Add a Card and Shuffle 
+
+    /// <summary> Do Not Clear Current Deck, Add a Card and Shuffle </summary>
     public void DeckShuffle(CardList.List cardname)
     {
         curDeck.Add(cardname);
