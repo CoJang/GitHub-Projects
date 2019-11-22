@@ -42,10 +42,4 @@ public class CardList : MonoBehaviour
         //var Cards = Resources.LoadAll<GameObject>("Prefabs/Cards/");
         //GameObject Cards = Instantiate(Resources.Load("Prefabs/Cards/", typeof(GameObject))) as GameObject;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

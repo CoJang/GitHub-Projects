@@ -87,7 +87,10 @@ public class InputManager : MonoBehaviour
     public void PlayCard()
     {
         if (MyCard.BeforePlayCard())
+        {
             MyCard.Play();
+            //Hand.instance.UpdateCards();
+        }
         else
             Debug.LogError("Not Enough Cost!");
     }

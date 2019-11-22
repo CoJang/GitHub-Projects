@@ -56,4 +56,21 @@ public class PhaseManager : MonoBehaviour
             endTurnBT.GetComponent<SpriteRenderer>().sprite
                 = endTurnBT.GetComponent<EndTurnBT>().sprites[1];
     }
+
+    public void EnemyTurnEnd()
+    {
+
+    }
+
+    public void StartNewRound()
+    {
+        if (Phase == PHASE.DrawPhase)
+        {
+            Hand.instance.CardDraw();
+            Player.instance.HealAP();
+            Phase = PHASE.MyPhase;
+            endTurnBT.GetComponent<SpriteRenderer>().sprite
+                = endTurnBT.GetComponent<EndTurnBT>().sprites[0];
+        }
+    }
 }

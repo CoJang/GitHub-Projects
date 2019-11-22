@@ -16,12 +16,4 @@ public class BaseObject : MonoBehaviour
         OnSkinObject();
     }
 
-    
-    void Update()
-    {
-        if (Application.isEditor)
-        {
-            OnSkinObject();
-        }
-    }
 }

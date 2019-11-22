@@ -9,6 +9,8 @@ public class Hand : MonoBehaviour
     public List<GameObject> MyHand;
     private CardList.List cardName;
 
+    GameObject parents;
+
     private void Awake()
     {
         instance = this;
@@ -17,6 +19,7 @@ public class Hand : MonoBehaviour
     void Start()
     {
         Deck.instance.DeckShuffle(Deck.ShuffleCase.ClearShuffle);
+        parents = GameObject.Find("====CARD====");
 
         CardDraw();
         CardDraw();
@@ -30,7 +33,6 @@ public class Hand : MonoBehaviour
 
         cardName = Deck.instance.DrawRequest();
         Deck.instance.ClearFromDeck();
-
         AfterDraw();
     }
 
@@ -44,7 +46,7 @@ public class Hand : MonoBehaviour
 
     public void AfterDraw()
     {
-        MyHand.Add(Instantiate(CardList.instance.ReturnObj(cardName)));
+        MyHand.Add(Instantiate(CardList.instance.ReturnObj(cardName), parents.transform));
 
         SortingCardsInHand();
     }
@@ -94,6 +96,7 @@ public class Hand : MonoBehaviour
         else Debug.LogError(MyHand.Count);
 
         PhaseManager.instance.CanPlay();
+        UpdateCards();
     }
     public enum CardPosition
     {
@@ -148,12 +151,6 @@ public class Hand : MonoBehaviour
         MyHand[cardindex].GetComponent<Card>().alphaRot = rot;
     }
 
-    public void Discard(int cardindex)
-    { 
-        DestroyImmediate(MyHand[cardindex]);
-        SortingCardsInHand();
-    }
-
     public void DiscardAll()
     {
         for (int i = MyHand.Count - 1; i > -1; i--)
@@ -170,5 +167,13 @@ public class Hand : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public void UpdateCards()
+    {
+        for (int i = 0; i < MyHand.Count; i++)
+        {
+            MyHand[i].GetComponent<Card>().UpdateDamage();
+        }
     }
 }

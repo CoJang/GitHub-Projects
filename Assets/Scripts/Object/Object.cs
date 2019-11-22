@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Objects : BaseObject
 {
@@ -10,6 +11,16 @@ public class Objects : BaseObject
 
     protected int currentHP;
     protected int currentDmg;
+    protected TextMeshPro HPtext;
+
+    protected virtual void Start()
+    {
+        currentHP = BaseSkin.BaseHP;
+        currentDmg = BaseSkin.BaseDamege;
+
+        HPtext = GetComponentInChildren<TextMeshPro>();
+        HPtext.text = currentHP.ToString();
+    }
 
     protected override void OnSkinObject()
     {
@@ -35,6 +46,8 @@ public class Objects : BaseObject
 
         currentHP -= Hitdamage;
         Debug.LogError("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
+
+        HPtext.text = currentHP.ToString();
 
         if (currentHP <= 0)
             OnDieObject();
@@ -62,10 +75,6 @@ public class Objects : BaseObject
         InputManager.instance.Target = null;
     }
 
-    protected virtual void Start()
-    {
-        currentHP = BaseSkin.BaseHP;
-        currentDmg = BaseSkin.BaseDamege;
-    }
+
 
 }

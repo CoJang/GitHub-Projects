@@ -8,10 +8,9 @@ public class DummyAttack : Card
     public override void Start()
     {
         base.Start();
-        currentDmg = BaseSkin.cardDamage + Player.instance.AD;
-        ChangeColor();
+        UpdateDamage();
     }
-    void UpdateDamage()
+    public override void UpdateDamage()
     {
         if (Player.instance.AD > 0 || Player.instance.AD < 0)
         {
@@ -19,10 +18,6 @@ public class DummyAttack : Card
                 currentDmg = BaseSkin.cardDamage + Player.instance.AD;
             ChangeColor();
         }
-    }
-    new private void Update()
-    {
-        UpdateDamage();
     }
 
     public override void Play()

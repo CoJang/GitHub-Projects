@@ -11,11 +11,10 @@ public class DummySpellCard : Card
     public override void Start()
     {
         base.Start();
-        currentDmg = BaseSkin.cardDamage + Player.instance.AP;
-        ChangeColor();
+        UpdateDamage();
     }
 
-    void UpdateDamage()
+    public override void UpdateDamage()
     {
         if (Player.instance.AP > 0 || Player.instance.AP < 0)
         {
@@ -23,11 +22,6 @@ public class DummySpellCard : Card
                 currentDmg = BaseSkin.cardDamage + Player.instance.AP;
             ChangeColor();
         }
-    }
-
-    new private void Update()
-    {
-        UpdateDamage();
     }
 
     public override void Play()
@@ -51,6 +45,7 @@ public class DummySpellCard : Card
     {
         base.OnPlayCard();
         Player.instance.AP++;
+        Hand.instance.UpdateCards();
     }
 
 }

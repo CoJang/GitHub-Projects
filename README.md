@@ -3,14 +3,20 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Re-Factoring Card Damage Update Process [Do Not Use Update]
+- Remove BaseCard/BaseObject.cs's Update
+- Add Player's HP HUD
+
+====================== 2019 / 11 / 22 =====================
+
+======================= Updated List ======================
+
 - Add Deck Count UI -> Deck.cs Moved to Deck UI from Player
 - Add Grave Count UI -> Grave.cs Moved to Grave UI from Player
 - Update Enemy Sprite [Temporary Disable Object.cs - OnSkin()]
 - Fix Sprite Anchor & Image file
 
 ====================== 2019 / 11 / 21 =====================
-
-======================= Updated List ======================
 
 - Add Phase [ Draw, My, Enemy Phase ]
 - Add End Turn Button

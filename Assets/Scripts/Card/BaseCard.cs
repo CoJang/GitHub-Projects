@@ -17,12 +17,5 @@ public class BaseCard : MonoBehaviour
         OnSkinCard();
     }
 
-    // Update is called once per frame
-    public virtual void Update()
-    {
-        if (Application.isEditor)
-        {
-            OnSkinCard();
-        }
-    }
+    public virtual void UpdateDamage(){}
 }
