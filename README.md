@@ -3,6 +3,11 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Add Enemy Attack Animation [Animator, Controller, Animation File Added]
+- Add Player's Action - Point HUD
+
+====================== 2019 / 11 / 25 =====================
+
 - Re-Factoring Card Damage Update Process [Do Not Use Update]
 - Remove BaseCard/BaseObject.cs's Update
 - Add Player's HP HUD

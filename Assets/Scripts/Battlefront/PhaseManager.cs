@@ -6,6 +6,8 @@ public class PhaseManager : MonoBehaviour
 {
     static public PhaseManager instance;
     public GameObject endTurnBT;
+    public GameObject[] Enemys;
+    public int count = 0;
     public enum PHASE
     {
         DrawPhase,
@@ -21,17 +23,11 @@ public class PhaseManager : MonoBehaviour
         endTurnBT = GameObject.FindGameObjectWithTag("TurnButton");
     }
 
-    void Update()
+    private void Start()
     {
-        if(Phase == PHASE.DrawPhase)
-        {
-            Hand.instance.CardDraw();
-            Player.instance.HealAP();
-            Phase = PHASE.MyPhase;
-            endTurnBT.GetComponent<SpriteRenderer>().sprite
-                = endTurnBT.GetComponent<EndTurnBT>().sprites[0];
-        }
+        StartNewRound();
     }
+
 
     public void EndTurnButtonClicked()
     {
@@ -42,6 +38,10 @@ public class PhaseManager : MonoBehaviour
 
             endTurnBT.GetComponent<SpriteRenderer>().sprite
                 = endTurnBT.GetComponent<EndTurnBT>().sprites[2];
+
+            count = 0;
+            Enemys = GameObject.FindGameObjectsWithTag("EnemyObject");
+            NextEnemyAttack(count);
         }
     }
     /// <summary>
@@ -59,18 +59,25 @@ public class PhaseManager : MonoBehaviour
 
     public void EnemyTurnEnd()
     {
-
+        Phase = PHASE.DrawPhase;
+        StartNewRound();
     }
 
     public void StartNewRound()
     {
         if (Phase == PHASE.DrawPhase)
         {
-            Hand.instance.CardDraw();
+            Hand.instance.OnNewRound();
             Player.instance.HealAP();
             Phase = PHASE.MyPhase;
             endTurnBT.GetComponent<SpriteRenderer>().sprite
                 = endTurnBT.GetComponent<EndTurnBT>().sprites[0];
         }
+    }
+
+    public void NextEnemyAttack(int index)
+    {
+        if(index < Enemys.Length)
+            Enemys[index].GetComponent<Objects>().PlayAttackAnim();
     }
 }

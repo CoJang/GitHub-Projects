@@ -8,11 +8,16 @@ public class Player : Objects
     public int AP = 0;
     public int AD = 0;
     public int ActionPoint = 0;
+    public int DrawPoint = 4;
+
+    /// <summary> [0] = feeled spr, [1] = empty spr </summary>
+    [SerializeField] Sprite[] spr = new Sprite[2];
 
     private int AP_heal = 4;
     private int MaxAP = 6;
     //private int APD = 0;
     //private int ADD = 0;
+    SpriteRenderer[] APspr;
 
     private void Awake()
     {
@@ -21,6 +26,11 @@ public class Player : Objects
     protected override void Start()
     {
         base.Start();
+        APspr = GameObject.Find("ActionPoints").GetComponentsInChildren<SpriteRenderer>();
+        for(int i = 0; i < 6; i++)
+        {
+            APspr[i].sprite = spr[1];
+        }
     }
     protected override void OnSkinObject() { }
 
@@ -46,7 +56,7 @@ public class Player : Objects
         if (Cost <= ActionPoint)
         {
             ActionPoint -= Cost;
-            Debug.LogError("Current Cost : " + ActionPoint.ToString());
+            UpdateAPspr();
             return true;
         }
         else return false;
@@ -57,5 +67,20 @@ public class Player : Objects
         ActionPoint += AP_heal;
         if (ActionPoint > MaxAP)
             ActionPoint = MaxAP;
+
+        UpdateAPspr();
+    }
+
+    public void UpdateAPspr()
+    {
+        for(int i = 0; i < ActionPoint; i++)
+        {
+            APspr[i].sprite = spr[0];
+        }
+
+        for(int i = 0; i < MaxAP - ActionPoint; i++)
+        {
+            APspr[MaxAP - i - 1].sprite = spr[1];
+        }
     }
 }

@@ -101,6 +101,7 @@ public class Card : BaseCard
     protected override void OnPlayCard()
     {
         base.OnPlayCard();
+        Player.instance.UpdateAPspr();
         Discard();
     }
 

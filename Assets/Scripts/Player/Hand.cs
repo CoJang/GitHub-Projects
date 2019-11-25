@@ -20,10 +20,6 @@ public class Hand : MonoBehaviour
     {
         Deck.instance.DeckShuffle(Deck.ShuffleCase.ClearShuffle);
         parents = GameObject.Find("====CARD====");
-
-        CardDraw();
-        CardDraw();
-        CardDraw();
     }
 
     public void CardDraw()
@@ -34,6 +30,14 @@ public class Hand : MonoBehaviour
         cardName = Deck.instance.DrawRequest();
         Deck.instance.ClearFromDeck();
         AfterDraw();
+    }
+
+    public void OnNewRound()
+    {
+        for (int i = 0; i < Player.instance.DrawPoint; i++)
+        {
+            CardDraw();
+        }
     }
 
     Vector3 MidCardPos = new Vector3(0, -9.78f, 0);
