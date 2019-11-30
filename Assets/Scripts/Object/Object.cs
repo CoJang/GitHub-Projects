@@ -44,6 +44,7 @@ public class Objects : BaseObject
     {
         base.OnDamageObject(Hitdamage);
 
+        PlayHitAnim();
         currentHP -= Hitdamage;
         Debug.LogError("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
 
@@ -52,6 +53,12 @@ public class Objects : BaseObject
         if (currentHP <= 0)
             OnDieObject();
     }
+
+    public override void PlayHitAnim()
+    {
+        GetComponent<Animator>().SetTrigger("PlayHitAnim");
+    }
+
 
     protected override void OnDieObject()
     {

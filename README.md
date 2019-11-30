@@ -5,6 +5,7 @@ Project Moss-Maze GitHub
 
 - Add Enemy Attack Animation [Animator, Controller, Animation File Added]
 - Add Player's Action - Point HUD
+- Add Enemy / Player Hit Anim [ in Objects.cs ]
 
 ====================== 2019 / 11 / 25 =====================
 

@@ -14,6 +14,7 @@ public class BaseObject : MonoBehaviour
 
     public virtual void EnemyAI() { }
     public virtual void PlayAttackAnim() { }
+    public virtual void PlayHitAnim() { }
     public virtual bool EndofAnim() { return IsAnimEnd; }
 
     void Start()
