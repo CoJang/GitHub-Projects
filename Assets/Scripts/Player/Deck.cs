@@ -32,19 +32,20 @@ public class Deck : MonoBehaviour
         DeckList.Add(CardList.List.Focus);
     }
 
-    //public GameObject DrawRequest()
     public CardList.List DrawRequest()
     {
-        count.text = DeckList.Count.ToString();
+        count.text = curDeck.Count.ToString();
         return curDeck[0];
     }
     public CardList.List DrawRequest(int cardindex)
     {
+        count.text = curDeck.Count.ToString();
         return curDeck[cardindex];
     }
     public void ClearFromDeck()
     {
         curDeck.RemoveAt(0);
+        count.text = curDeck.Count.ToString();
     }
     public enum ShuffleCase
     {
@@ -83,24 +84,12 @@ public class Deck : MonoBehaviour
             case ShuffleCase.ClearShuffle:
                 curDeck.Clear();
                 CopyDeck(ShuffleCase.ClearShuffle);
-                for(int i = DeckList.Count; i > 1; i--)
-                {
-                    int s = Random.Range(0, i);
-                    CardList.List t = curDeck[s];
-                    curDeck[s] = curDeck[i - 1];
-                    curDeck[i - 1] = t;
-                }
+                Randomize(Grave.instance.graveDeck.Count);
                 break;
             case ShuffleCase.GraveToDeck:
                 curDeck.Clear();
                 CopyDeck(ShuffleCase.GraveToDeck);
-                for (int i = Grave.instance.graveDeck.Count; i > 1; i--)
-                {
-                    int s = Random.Range(0, i);
-                    CardList.List t = curDeck[s];
-                    curDeck[s] = curDeck[i - 1];
-                    curDeck[i - 1] = t;
-                }
+                Randomize(Grave.instance.graveDeck.Count);
                 Grave.instance.graveDeck.Clear();
                 break;
         }
@@ -110,13 +99,47 @@ public class Deck : MonoBehaviour
     public void DeckShuffle(CardList.List cardname)
     {
         curDeck.Add(cardname);
+        Randomize(curDeck.Count);
+        count.text = curDeck.Count.ToString();
+    }
 
-        for (int i = curDeck.Count; i > 1; i--)
+    public void Randomize(int count)
+    {
+        for (int i = count; i > 1; i--)
         {
             int s = Random.Range(0, i);
             CardList.List t = curDeck[s];
             curDeck[s] = curDeck[i - 1];
             curDeck[i - 1] = t;
+        }
+    }
+
+    public void Randomize(List<CardList.List> list)
+    {
+        for (int i = list.Count; i > 1; i--)
+        {
+            int s = Random.Range(0, i);
+            CardList.List t = list[s];
+            list[s] = list[i - 1];
+            list[i - 1] = t;
+        }
+    }
+
+    /// <summary> Show Remains of Current Deck Randomly </summary>
+    public void ShowCurrentDeck()
+    {
+        List<CardList.List> tempList = new List<CardList.List>();
+
+        for(int i = 0; i < curDeck.Count; i++)
+        {
+            tempList.Add(curDeck[i]);
+        }
+
+        Randomize(tempList);
+
+        for(int i = 0; i < tempList.Count; i++)
+        {
+            Debug.Log(tempList[i].ToString());
         }
     }
 }

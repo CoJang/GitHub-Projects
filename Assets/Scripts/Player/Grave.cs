@@ -31,4 +31,12 @@ public class Grave : MonoBehaviour
 
         Hand.instance.SortingCardsInHand();
     }
+
+    public void ShowGraveList()
+    {
+        for(int i=0; i< graveDeck.Count; i++)
+        {
+            Debug.Log(graveDeck[i].ToString());
+        }
+    }
 }

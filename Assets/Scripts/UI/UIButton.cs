@@ -4,20 +4,24 @@ using UnityEngine;
 
 public class UIButton : MonoBehaviour
 {
-    public bool IsClicked = false;
-    protected void OnMouseEnter()
+    public void OnMouseUpAsButton()
     {
-        InputManager.instance.UI = this;
-    }
-
-    protected void OnMouseUpAsButton()
-    {
-        IsClicked = true;
-    }
-
-    protected void OnMouseExit()
-    {
-        InputManager.instance.UI = null;
-        IsClicked = false;
+        switch (gameObject.name)
+        {
+            case "Grave":
+                Debug.Log(gameObject.name + "Clicked");
+                Grave.instance.ShowGraveList();
+                break;
+            case "Deck":
+                Debug.Log(gameObject.name + "Clicked");
+                Deck.instance.ShowCurrentDeck();
+                break;
+            case "EndTurnButton":
+                Debug.Log(gameObject.name + "Clicked");
+                PhaseManager.instance.EndTurnButtonClicked();
+                break;
+            default:
+                break;
+        }
     }
 }

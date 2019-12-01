@@ -5,9 +5,14 @@ using UnityEngine;
 public class PhaseManager : MonoBehaviour
 {
     static public PhaseManager instance;
-    public GameObject endTurnBT;
     public GameObject[] Enemys;
     public int count = 0;
+
+    public GameObject endTurnBT;
+    /// <summary>
+    /// [0] = Have Cost MyTurn [1] = No Cost MyTurn [2] = Enemy Turn
+    /// </summary>
+    public Sprite[] sprites = new Sprite[3];
     public enum PHASE
     {
         DrawPhase,
@@ -36,8 +41,7 @@ public class PhaseManager : MonoBehaviour
             Phase = PHASE.EnemyPhase;
             Hand.instance.DiscardAll();
 
-            endTurnBT.GetComponent<SpriteRenderer>().sprite
-                = endTurnBT.GetComponent<EndTurnBT>().sprites[2];
+            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[2];
 
             count = 0;
             Enemys = GameObject.FindGameObjectsWithTag("EnemyObject");
@@ -50,11 +54,9 @@ public class PhaseManager : MonoBehaviour
     public void CanPlay()
     {
         if(Phase == PHASE.MyPhase && Hand.instance.CanPlayAnyCard())
-            endTurnBT.GetComponent<SpriteRenderer>().sprite
-                = endTurnBT.GetComponent<EndTurnBT>().sprites[0];
+            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[0];
         else
-            endTurnBT.GetComponent<SpriteRenderer>().sprite
-                = endTurnBT.GetComponent<EndTurnBT>().sprites[1];
+            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[1];
     }
 
     public void EnemyTurnEnd()
@@ -70,8 +72,7 @@ public class PhaseManager : MonoBehaviour
             Hand.instance.OnNewRound();
             Player.instance.HealAP();
             Phase = PHASE.MyPhase;
-            endTurnBT.GetComponent<SpriteRenderer>().sprite
-                = endTurnBT.GetComponent<EndTurnBT>().sprites[0];
+            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[0];
         }
     }
 
