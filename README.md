@@ -3,6 +3,13 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Map Tile Resource Added
+- Added Tile Code [ temp ]
+
+====================== 2019 / 12 / 02 =====================
+
+======================= Updated List ======================
+
 - Add Enemy Attack Animation [Animator, Controller, Animation File Added]
 - Add Player's Action - Point HUD
 - Add Enemy / Player Hit Anim [ in Objects.cs ]
@@ -14,8 +21,6 @@ Project Moss-Maze GitHub
 - Add Player's HP HUD
 
 ====================== 2019 / 11 / 22 =====================
-
-======================= Updated List ======================
 
 - Add Deck Count UI -> Deck.cs Moved to Deck UI from Player
 - Add Grave Count UI -> Grave.cs Moved to Grave UI from Player

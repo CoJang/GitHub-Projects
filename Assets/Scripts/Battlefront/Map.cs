@@ -24,25 +24,98 @@ public class Map : MonoBehaviour
         Way1R = 12,     // Blocked Right
         Way1L = 13, 
         Way1U = 14,
-        Way1D = 15
-    }
+        Way1D = 15,
 
-    public Type BlockType;
+        Type_End = 16
+    }
+    /// <summary> spr [1] = one way down, [3] = two way right-left, 
+    /// [2] = three way right, [0] = four way </summary>
+    public Sprite[] spr = new Sprite[4];
     
-    struct Block
+    public struct Block
     {
         public Type type;
-        public Vector2Int pos;
+        public Vector2 pos;
     }
     List<Block> map = new List<Block>();
     int mapsize = 16;
 
+    GameObject[] Tiles;
+
+    private void Awake()
+    {
+        Tiles = Resources.LoadAll<GameObject>("Prefabs/MapTile/");
+    }
+
     private void Start()
     {
+        int j = 0;
         for(int i = 0; i < mapsize; i++)
         {
             Block temp = new Block();
-            temp.type = Type.Way4;
+            temp.type = (Type)Random.Range(0, (int)Type.Type_End);
+
+            if (i % 4 == 0) j++;
+            temp.pos = new Vector2(i % 4 * 1.2f, j * 1.2f);
+
+            map.Add(temp);
+            MatchingTile(temp);
+        }
+
+        
+    }
+
+    public void MatchingTile(Block tile)
+    {
+        switch(tile.type)
+        {
+            case Type.Blocked:
+                break;
+            case Type.Way1D:
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way1L:
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way1R:
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way1U:
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2H:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2V:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2LD:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2LU:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2RD:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way2RU:
+                Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way3Down:
+                Instantiate(Tiles[2], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way3Left:
+                Instantiate(Tiles[2], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way3Right:
+                Instantiate(Tiles[2], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way3Up:
+                Instantiate(Tiles[2], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
+            case Type.Way4:
+                Instantiate(Tiles[0], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                break;
         }
     }
 }
