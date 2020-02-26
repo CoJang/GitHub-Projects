@@ -3,12 +3,21 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Map System Updated
+- Added Fog of War [ TODO : Fix Marker between Sight ]
+- Deleted Tiles [ TODO : Make Tile-Map System ]
+- Added MenuScene [ With Some Text ]
+
+* Welcome Back
+
+====================== 2020 / 02 / 27 =====================
+
+======================= Updated List ======================
+
 - Map Tile Resource Added
 - Added Tile Code [ temp ]
 
 ====================== 2019 / 12 / 02 =====================
-
-======================= Updated List ======================
 
 - Add Enemy Attack Animation [Animator, Controller, Animation File Added]
 - Add Player's Action - Point HUD

@@ -21,10 +21,9 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
+        if(Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
+
+        if (Input.GetKeyDown(KeyCode.Tab)) Map.instance.PopMap();
 
         //if (Input.GetKeyDown(KeyCode.Space))
         //{
@@ -32,6 +31,7 @@ public class InputManager : MonoBehaviour
         //    //Deck.instance.DeckShuffle(Deck.ShuffleCase.GraveToDeck);
         //    //Deck.instance.DeckShuffle("SpellCard");
         //}
+
         if (PhaseManager.instance.Phase != PhaseManager.PHASE.MyPhase) return;
 
         tempMousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z);

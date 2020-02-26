@@ -21,7 +21,7 @@ public class Lobby : MonoBehaviour
     private void Update()
     {
         if(Input.anyKeyDown)
-            SceneManager.LoadScene("Battlefront");
+            SceneManager.LoadScene("MenuScene");
     }
 
 

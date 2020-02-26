@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
+
+
 public class UIButton : MonoBehaviour
 {
     public void OnMouseUpAsButton()
@@ -23,5 +27,23 @@ public class UIButton : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void OnNewGameButtonCilcked()
+    {
+        SceneManager.LoadScene("Battlefront");
+    }
+
+    public void OnLoadGameButtonCilcked()
+    {
+        SceneManager.LoadScene("Battlefront");
+    }
+    public void OnOpitionButtonCilcked()
+    {
+        Debug.Log("OptionButtonClicked");
+    }
+    public void OnQuitButtonCilcked()
+    {
+        Application.Quit();
     }
 }

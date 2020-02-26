@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    static public Map instance;
+    public MeshRenderer MapSpr;
+    public MeshRenderer Fog;
+    public GameObject Marker;
+    public GameObject Aperture;
+
     public enum Type
     {
         Blocked = 0,
@@ -45,15 +51,23 @@ public class Map : MonoBehaviour
     private void Awake()
     {
         Tiles = Resources.LoadAll<GameObject>("Prefabs/MapTile/");
+        instance = this;
     }
 
     private void Start()
     {
+        //CreateRandomMap();    
+    }
+
+    private void CreateRandomMap()
+    {
         int j = 0;
-        for(int i = 0; i < mapsize; i++)
+        for (int i = 0; i < mapsize; i++)
         {
-            Block temp = new Block();
-            temp.type = (Type)Random.Range(0, (int)Type.Type_End);
+            Block temp = new Block
+            {
+                type = (Type)Random.Range(0, (int)Type.Type_End)
+            };
 
             if (i % 4 == 0) j++;
             temp.pos = new Vector2(i % 4 * 1.2f, j * 1.2f);
@@ -61,8 +75,28 @@ public class Map : MonoBehaviour
             map.Add(temp);
             MatchingTile(temp);
         }
+    }
 
-        
+    public void PopMap()
+    {
+        MapSpr.enabled ^= true;
+        Fog.enabled ^= true;
+        Marker.SetActive(MapSpr.enabled);
+        Aperture.SetActive(MapSpr.enabled);
+    }
+
+    float hrz;
+    float vrt;
+    [SerializeField] private float fSpeed = 0.1f;
+
+    private void Update()
+    {
+        hrz = Input.GetAxis("Horizontal"); vrt = Input.GetAxis("Vertical");
+
+        Vector3 movVec = new Vector3(-vrt, hrz, 0);
+        movVec = movVec.normalized * fSpeed;
+
+        Marker.transform.Translate(movVec);
     }
 
     public void MatchingTile(Block tile)
@@ -72,16 +106,16 @@ public class Map : MonoBehaviour
             case Type.Blocked:
                 break;
             case Type.Way1D:
-                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 90, 1));
                 break;
             case Type.Way1L:
-                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 90, 1));
                 break;
             case Type.Way1R:
                 Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
                 break;
             case Type.Way1U:
-                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
+                Instantiate(Tiles[1], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 90, 1));
                 break;
             case Type.Way2H:
                 Instantiate(Tiles[3], new Vector3(tile.pos.x, tile.pos.y, 1), new Quaternion(0, 0, 0, 1));
