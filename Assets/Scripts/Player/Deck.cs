@@ -21,7 +21,7 @@ public class Deck : MonoBehaviour
         if (count == null)
             count = gameObject.GetComponentInChildren<TextMeshPro>();
 
-        for (int i=0; i < 6; i++)
+        for (int i=0; i < 4; i++)
         {
             DeckList.Add(CardList.List.AttackCard);
         }
@@ -30,6 +30,8 @@ public class Deck : MonoBehaviour
         DeckList.Add(CardList.List.SpellCard);
         DeckList.Add(CardList.List.Focus);
         DeckList.Add(CardList.List.Focus);
+        DeckList.Add(CardList.List.BrutalAttack);
+        DeckList.Add(CardList.List.BrutalAttack);
     }
 
     public CardList.List DrawRequest()

@@ -868,6 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
 --- !u!210 &223900496
@@ -950,6 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
 --- !u!210 &228031166
@@ -1528,6 +1530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
 --- !u!210 &546428746
@@ -4770,6 +4773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3abfecb8c227934d95649e5c6807e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 72633c9ca7052be4aa60cae1d3053973, type: 2}
   IsAnimEnd: 0
   AP: 0

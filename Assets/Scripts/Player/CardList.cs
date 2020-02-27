@@ -11,7 +11,8 @@ public class CardList : MonoBehaviour
         None,
         AttackCard,
         SpellCard,
-        Focus
+        Focus,
+        BrutalAttack
     }
 
     //GameObject[] Cards = new GameObject[sizeof(List)];
@@ -23,10 +24,12 @@ public class CardList : MonoBehaviour
         {
             case List.AttackCard:
                 return Cards[0];
-            case List.Focus:
+            case List.BrutalAttack:
                 return Cards[1];
-            case List.SpellCard:
+            case List.Focus:
                 return Cards[2];
+            case List.SpellCard:
+                return Cards[3];
             case List.None:
             default:
                 return null;

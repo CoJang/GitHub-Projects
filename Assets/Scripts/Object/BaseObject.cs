@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode()]
 public class BaseObject : MonoBehaviour
 {
+    public Ailment ailment;
     public BaseObjectData BaseSkin;
     public bool IsAnimEnd = false;
     protected virtual void OnSkinObject() { }

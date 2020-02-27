@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DummyAttack : Card
+public class BrutalAttack : Card
 {
     public Objects TargetObj;
     public override void Start()
@@ -20,6 +20,7 @@ public class DummyAttack : Card
         }
     }
 
+
     public override void Play()
     {
         base.Play();
@@ -27,9 +28,17 @@ public class DummyAttack : Card
         TargetObj = InputManager.instance.Target;
         TargetObj.DealDamage(currentDmg);
 
-        Hand.instance.CardDraw();
+        CauseBleeding(TargetObj, (currentDmg / 3), 2, 1);
 
         Debug.LogError(BaseSkin.cardName + " Played");
         OnPlayCard();
+    }
+
+    public void CauseBleeding(Objects target, float dot, short duration, short stack)
+    {
+        target.ailment.states.Add(new Ailment.AilmentState
+            (Ailment.StateList.Bleeding, dot, duration, stack));
+
+        Debug.Log("Target's Ailment List : " + target.ailment.states.ToString());
     }
 }

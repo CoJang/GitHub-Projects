@@ -20,6 +20,7 @@ public class Objects : BaseObject
 
         HPtext = GetComponentInChildren<TextMeshPro>();
         HPtext.text = currentHP.ToString();
+
     }
 
     protected override void OnSkinObject()
