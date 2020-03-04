@@ -805,6 +805,7 @@ GameObject:
   - component: {fileID: 223900495}
   - component: {fileID: 223900494}
   - component: {fileID: 223900497}
+  - component: {fileID: 223900498}
   m_Layer: 0
   m_Name: ManAtArms
   m_TagString: EnemyObject
@@ -868,9 +869,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ailment: {fileID: 0}
+  ailment: {fileID: 223900498}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
+  AP: 4
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!210 &223900496
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -901,6 +906,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &223900498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223900492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228031163
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +931,7 @@ GameObject:
   - component: {fileID: 228031165}
   - component: {fileID: 228031167}
   - component: {fileID: 228031168}
+  - component: {fileID: 228031169}
   m_Layer: 0
   m_Name: Occultist
   m_TagString: EnemyObject
@@ -951,9 +969,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ailment: {fileID: 0}
+  ailment: {fileID: 228031169}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
+  AP: 4
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!210 &228031166
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1010,6 +1032,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &228031169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228031163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &244518402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,6 +1501,7 @@ GameObject:
   - component: {fileID: 546428745}
   - component: {fileID: 546428744}
   - component: {fileID: 546428747}
+  - component: {fileID: 546428748}
   m_Layer: 0
   m_Name: Crusader
   m_TagString: EnemyObject
@@ -1530,9 +1565,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ailment: {fileID: 0}
+  ailment: {fileID: 546428748}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
   IsAnimEnd: 0
+  AP: 4
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!210 &546428746
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1563,6 +1602,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &546428748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546428742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &583887357
 GameObject:
   m_ObjectHideFlags: 0
@@ -1577,6 +1628,7 @@ GameObject:
   - component: {fileID: 583887361}
   - component: {fileID: 583887362}
   - component: {fileID: 583887363}
+  - component: {fileID: 583887364}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1676,9 +1728,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfced7228881163478bb7e62b92c3a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemys: []
-  count: 0
-  endTurnBT: {fileID: 1550041866}
   sprites:
   - {fileID: 21300000, guid: 7761a7bffea0f7649a645e6b18ab7ae5, type: 3}
   - {fileID: 21300000, guid: 173c2c17ebae85e4f8835c123917fb18, type: 3}
@@ -1697,6 +1746,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mat: {fileID: 2100000, guid: 664d59949d70ea242aa4f82ddfbb9ded, type: 2}
+--- !u!114 &583887364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583887357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07117f6b73459d744a2d681c4db9cd3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemys: []
+  Alliance: []
 --- !u!1 &645559772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,6 +2052,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ba82a6a36e27a449e51ea7ab164014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTurnBT: {fileID: 0}
+  spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &647800954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2758,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ba82a6a36e27a449e51ea7ab164014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTurnBT: {fileID: 0}
+  spr:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &972227869
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,6 +4422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ba82a6a36e27a449e51ea7ab164014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endTurnBT: {fileID: 1550041868}
+  spr:
+  - {fileID: 21300000, guid: 7761a7bffea0f7649a645e6b18ab7ae5, type: 3}
+  - {fileID: 21300000, guid: 173c2c17ebae85e4f8835c123917fb18, type: 3}
+  - {fileID: 21300000, guid: 0eff0b52365901a4d8f24b620327ba1a, type: 3}
 --- !u!1 &1605371413
 GameObject:
   m_ObjectHideFlags: 0
@@ -4735,6 +4813,7 @@ GameObject:
   - component: {fileID: 1799293533}
   - component: {fileID: 1799293529}
   - component: {fileID: 1799293531}
+  - component: {fileID: 1799293532}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4773,12 +4852,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3abfecb8c227934d95649e5c6807e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ailment: {fileID: 0}
+  ailment: {fileID: 1799293532}
   BaseSkin: {fileID: 11400000, guid: 72633c9ca7052be4aa60cae1d3053973, type: 2}
   IsAnimEnd: 0
   AP: 0
   AD: 0
   ActionPoint: 0
+  AP_heal: 4
   DrawPoint: 4
   spr:
   - {fileID: 21300000, guid: 039c6a77d0328ff44a55f54f5711e568, type: 3}
@@ -4841,6 +4921,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1799293532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799293526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1799293533
 MonoBehaviour:
   m_ObjectHideFlags: 0

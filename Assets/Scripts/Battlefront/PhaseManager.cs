@@ -5,19 +5,16 @@ using UnityEngine;
 public class PhaseManager : MonoBehaviour
 {
     static public PhaseManager instance;
-    public GameObject[] Enemys;
-    public int count = 0;
 
-    public GameObject endTurnBT;
-    /// <summary>
-    /// [0] = Have Cost MyTurn [1] = No Cost MyTurn [2] = Enemy Turn
-    /// </summary>
-    public Sprite[] sprites = new Sprite[3];
     public enum PHASE
     {
         DrawPhase,
-        MyPhase,
-        EnemyPhase
+        StartPlayerPhase,
+        PlayerPhase,
+        EndPlayerPhase,
+        StartEnemyPhase,
+        EnemyPhase,
+        EndEnemyPhase
     }
 
     public PHASE Phase = PHASE.DrawPhase;
@@ -25,43 +22,11 @@ public class PhaseManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        endTurnBT = GameObject.FindGameObjectWithTag("TurnButton");
     }
 
     private void Start()
     {
-        StartNewRound();
-    }
-
-
-    public void EndTurnButtonClicked()
-    {
-        if (Phase == PHASE.MyPhase)
-        {
-            Phase = PHASE.EnemyPhase;
-            Hand.instance.DiscardAll();
-
-            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[2];
-
-            count = 0;
-            Enemys = GameObject.FindGameObjectsWithTag("EnemyObject");
-            NextEnemyAttack(count);
-        }
-    }
-    /// <summary>
-    /// Check Player's Hand. If You Can't Play Any Card, EndButton Will Shine
-    /// </summary>
-    public void CanPlay()
-    {
-        if(Phase == PHASE.MyPhase && Hand.instance.CanPlayAnyCard())
-            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[0];
-        else
-            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[1];
-    }
-
-    public void EnemyTurnEnd()
-    {
-        Phase = PHASE.DrawPhase;
+        Deck.instance.DeckShuffle();
         StartNewRound();
     }
 
@@ -69,16 +34,28 @@ public class PhaseManager : MonoBehaviour
     {
         if (Phase == PHASE.DrawPhase)
         {
-            Hand.instance.OnNewRound();
-            Player.instance.HealAP();
-            Phase = PHASE.MyPhase;
-            endTurnBT.GetComponent<SpriteRenderer>().sprite = sprites[0];
+            Phase = PHASE.StartPlayerPhase;
+
+            ObjectManager.instance.StartAllianceTurn();
         }
     }
 
-    public void NextEnemyAttack(int index)
+    public void EndTurnButtonClicked()
     {
-        if(index < Enemys.Length)
-            Enemys[index].GetComponent<Objects>().PlayAttackAnim();
+        if (Phase == PHASE.PlayerPhase)
+        {
+            Phase = PHASE.EndPlayerPhase;
+
+            ObjectManager.instance.EndAllianceTurn();
+
+            Phase = PHASE.StartEnemyPhase;
+            ObjectManager.instance.StartEnemyTurn();
+        }
+    }
+
+    public void EnemyTurnEnd()
+    {
+        Phase = PHASE.DrawPhase;
+        StartNewRound();
     }
 }

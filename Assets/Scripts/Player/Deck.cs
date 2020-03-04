@@ -32,6 +32,7 @@ public class Deck : MonoBehaviour
         DeckList.Add(CardList.List.Focus);
         DeckList.Add(CardList.List.BrutalAttack);
         DeckList.Add(CardList.List.BrutalAttack);
+        DeckShuffle();
     }
 
     public CardList.List DrawRequest()
@@ -104,6 +105,14 @@ public class Deck : MonoBehaviour
         Randomize(curDeck.Count);
         count.text = curDeck.Count.ToString();
     }
+
+    /// <summary> Do Not Clear Current Deck </summary>
+    public void DeckShuffle()
+    {
+        Randomize(curDeck.Count);
+        count.text = curDeck.Count.ToString();
+    }
+
 
     public void Randomize(int count)
     {

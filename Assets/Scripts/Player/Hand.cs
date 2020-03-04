@@ -27,6 +27,8 @@ public class Hand : MonoBehaviour
         if (Deck.instance.curDeck.Count < 1)
             Deck.instance.DeckShuffle(Deck.ShuffleCase.GraveToDeck);
 
+        if(MyHand.Count >= 10) 
+
         cardName = Deck.instance.DrawRequest();
         Deck.instance.ClearFromDeck();
         AfterDraw();
@@ -99,7 +101,7 @@ public class Hand : MonoBehaviour
         }
         else Debug.LogError(MyHand.Count);
 
-        PhaseManager.instance.CanPlay();
+        UIButton.instance.ChangeEndButton(CanPlay());
         UpdateCards();
     }
     public enum CardPosition
@@ -171,6 +173,14 @@ public class Hand : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public bool CanPlay()
+    {
+        if (PhaseManager.instance.Phase == PhaseManager.PHASE.PlayerPhase && CanPlayAnyCard())
+            return true;
+        else
+            return false;
     }
 
     public void UpdateCards()

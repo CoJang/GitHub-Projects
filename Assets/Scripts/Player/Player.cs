@@ -5,15 +5,11 @@ using UnityEngine;
 public class Player : Objects
 {
     static public Player instance;
-    public int AP = 0;
-    public int AD = 0;
-    public int ActionPoint = 0;
     public int DrawPoint = 4;
 
     /// <summary> [0] = feeled spr, [1] = empty spr </summary>
     [SerializeField] Sprite[] spr = new Sprite[2];
 
-    private int AP_heal = 4;
     private int MaxAP = 6;
     //private int APD = 0;
     //private int ADD = 0;
@@ -27,28 +23,21 @@ public class Player : Objects
     {
         base.Start();
         APspr = GameObject.Find("ActionPoints").GetComponentsInChildren<SpriteRenderer>();
+
         for(int i = 0; i < 6; i++)
         {
             APspr[i].sprite = spr[1];
         }
+
+        //ObjectManager.instance.Alliance.Add(gameObject);
+        ObjectManager.instance.Alliance.Add(this);
     }
-    protected override void OnSkinObject() { }
 
     protected override void OnDieObject()
     {
         base.OnDieObject();
         Debug.LogError("Game Over!");
         PhaseManager.instance.Phase = PhaseManager.PHASE.EnemyPhase;
-    }
-
-    protected override void OnDamageObject(int Hitdamage)
-    {
-        base.OnDamageObject(Hitdamage);
-    }
-
-    public override void DealDamage(int deal)
-    {
-        base.DealDamage(deal);
     }
 
     public bool OnAction(int Cost)
@@ -82,5 +71,24 @@ public class Player : Objects
         {
             APspr[MaxAP - i - 1].sprite = spr[1];
         }
+    }
+
+    public override void StartTurn()
+    {
+        //base.StartTurn();
+        CheckNDAilment();
+        Hand.instance.OnNewRound();
+        HealAP();
+
+        PhaseManager.instance.Phase = PhaseManager.PHASE.PlayerPhase;
+        UIButton.instance.ChangeEndButton(true);
+    }
+
+    public override void EndTurn()
+    {
+        //base.EndTurn();
+        Hand.instance.DiscardAll();
+        CheckDmgAilment();
+
     }
 }

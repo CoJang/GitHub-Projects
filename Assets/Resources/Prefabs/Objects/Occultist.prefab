@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 4569255390760279479}
   - component: {fileID: 4569255390760279476}
   - component: {fileID: 4569255390760279478}
+  - component: {fileID: -7117788693433204903}
   m_Layer: 0
   m_Name: Occultist
   m_TagString: EnemyObject
@@ -425,7 +426,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
+  IsAnimEnd: 0
+  AP: 0
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!61 &4569255390760279478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -452,6 +459,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.76, y: 5.06}
   m_EdgeRadius: 0
+--- !u!114 &-7117788693433204903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4569255390760279474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4569255392171406706
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,9 +9,11 @@ public class DummyObject : Objects
     protected override void Start()
     {
         base.Start();
+        //ObjectManager.instance.Enemys.Add(gameObject);
+        ObjectManager.instance.Enemys.Add(this);
     }
 
-    protected override void OnDamageObject(int Hitdamage)
+    protected override void OnDamageObject(float Hitdamage)
     {
         base.OnDamageObject(Hitdamage);
     }
@@ -23,21 +25,33 @@ public class DummyObject : Objects
 
     public override void EnemyAI()
     {
-        if (PhaseManager.instance.Phase == PhaseManager.PHASE.EnemyPhase)
-        {
-            Target = GameObject.FindGameObjectWithTag("Player");
-            Target.GetComponent<Player>().DealDamage(currentDmg);
-        }
+        Target = GameObject.FindGameObjectWithTag("Player");
+        Target.GetComponent<Player>().DealDamage(currentDmg);
     }
 
     public override bool EndofAnim()
     {
         IsAnimEnd = true;
-        PhaseManager.instance.count++;
-        PhaseManager.instance.NextEnemyAttack(PhaseManager.instance.count);
-        if (PhaseManager.instance.count == PhaseManager.instance.Enemys.Length)
-            PhaseManager.instance.EnemyTurnEnd();
+        EndTurn();
+        ObjectManager.instance.NextEnemyAnim();
+
         return IsAnimEnd;
+    }
+
+    public override void StartTurn()
+    {
+        //base.StartTurn();
+        CheckNDAilment();
+
+        PlayAttackAnim();
+        //EnemyAI();
+
+    }
+
+    public override void EndTurn()
+    {
+        //base.EndTurn();
+        CheckDmgAilment();
     }
 
 }

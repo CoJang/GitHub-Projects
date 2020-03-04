@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 4813518881132907679}
   - component: {fileID: 4813518881132907648}
   - component: {fileID: 4813518881132907649}
+  - component: {fileID: -5763563193757373253}
   m_Layer: 0
   m_Name: ManAtArms
   m_TagString: EnemyObject
@@ -505,7 +506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
+  IsAnimEnd: 0
+  AP: 0
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!61 &4813518881132907649
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,3 +539,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.24, y: 5.06}
   m_EdgeRadius: 0
+--- !u!114 &-5763563193757373253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813518881132907651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

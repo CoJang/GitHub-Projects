@@ -12,6 +12,12 @@ public class Objects : BaseObject
     protected int currentHP;
     protected int currentDmg;
     protected TextMeshPro HPtext;
+    protected float ShockFactor = 1;
+
+    public int AP = 0;
+    public int AD = 0;
+    public int ActionPoint = 0;
+    public int AP_heal = 4;
 
     protected virtual void Start()
     {
@@ -21,38 +27,31 @@ public class Objects : BaseObject
         HPtext = GetComponentInChildren<TextMeshPro>();
         HPtext.text = currentHP.ToString();
 
+        ailment = gameObject.GetComponent<Ailment>();
     }
 
-    protected override void OnSkinObject()
-    {
-        base.OnSkinObject();
-        
-        //Objectspr = GetComponentsInChildren<SpriteRenderer>();
-
-        //Objectspr[0].sprite = BaseSkin.objectFrameSprite;
-        ////Objectspr[1].sprite = BaseSkin.objectSprite;
-
-        //// Set Visible Inside Mask
-        //Objectspr[1].maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-
-
-        //if (GetComponentInChildren<SpriteMask>() == null) return;
-        //Objectmask = GetComponentInChildren<SpriteMask>();
-        //Objectmask.sprite = BaseSkin.objectMask;
-    }
-
-    protected override void OnDamageObject(int Hitdamage)
+    protected override void OnDamageObject(float Hitdamage)
     {
         base.OnDamageObject(Hitdamage);
 
         PlayHitAnim();
-        currentHP -= Hitdamage;
+        currentHP -= (int)(Hitdamage * ShockFactor);
         Debug.LogError("Object Damaged! HP : " + currentHP + " Damage : " + Hitdamage);
 
         HPtext.text = currentHP.ToString();
 
         if (currentHP <= 0)
             OnDieObject();
+    }
+
+    public override void StartTurn()
+    {
+        CheckNDAilment();
+    }
+
+    public override void EndTurn()
+    {
+        CheckDmgAilment();
     }
 
     public override void PlayHitAnim()
@@ -65,10 +64,11 @@ public class Objects : BaseObject
     {
         base.OnDieObject();
 
+        ObjectManager.instance.Enemys.Remove(this);
         DestroyImmediate(gameObject);
     }
 
-    public virtual void DealDamage(int deal)
+    public virtual void DealDamage(float deal)
     {
         OnDamageObject(deal);
     }
@@ -83,6 +83,88 @@ public class Objects : BaseObject
         InputManager.instance.Target = null;
     }
 
+    ///<summary> Checking Damaging Ailments at End of Turn
+    ///</summary>
+    public override void CheckDmgAilment()
+    {
+        for (int i = 0; i < ailment.states.Count; i++)
+        {
+            if (ailment.states[i].Duration > 0)
+            {
+                ailment.states[i].Duration -= 1;
 
+                if(ailment.states[i].State == Ailment.StateList.Poison)
+                    DealDamage(ailment.states[i].DamageOverTime * 
+                                                    ailment.states[i].Stack);
+                else
+                    DealDamage(ailment.states[i].DamageOverTime);
+
+                StateDurationCheck(i);
+            }
+            else
+            {
+                ailment.states.RemoveAt(i);
+                Debug.Log(gameObject.name + "'s " + ailment.states[i].State.ToString() + " Removed !");
+            } 
+        }
+    }
+
+    ///<summary> Checking None-Damaging Ailments at Start of Turn
+    ///</summary>
+    public override void CheckNDAilment()
+    {
+        for (int i = 0; i < ailment.states.Count; i++)
+        {
+            if (ailment.states[i].Duration > 0)
+            {
+                ailment.states[i].Duration -= 1;
+
+                switch(ailment.states[i].State)
+                {
+                    case Ailment.StateList.Downed:
+                    case Ailment.StateList.Frozen:
+                    case Ailment.StateList.Stuned:
+                        // Spend one Turn to Recover
+                        ActionPoint = 0;
+                        break;
+                    case Ailment.StateList.Maim:
+                        // AP - 1
+                        AP_heal = 3;
+                        break;
+                    case Ailment.StateList.Shocked:
+                        // Twice damage on first hit
+                        break;
+                }
+
+                StateDurationCheck(i);
+            }
+            else
+            {
+                ailment.states.RemoveAt(i);
+                Debug.Log(gameObject.name + "'s " + ailment.states[i].State.ToString() + " Removed !");
+            }
+        }
+    }
+
+    public void StateDurationCheck()
+    {
+        for (int i = 0; i < ailment.states.Count; i++)
+        {
+            if (ailment.states[i].Duration <= 0)
+            {
+                ailment.states.RemoveAt(i);
+                Debug.Log(gameObject.name + "'s " + ailment.states[i].State.ToString() + " Removed !");
+            }
+        }
+    }
+
+    public void StateDurationCheck(int index)
+    {
+        if (ailment.states[index].Duration <= 0)
+        {
+            ailment.states.RemoveAt(index);
+            Debug.Log(gameObject.name + "'s " + ailment.states[index].State.ToString() + " Removed !");
+        }
+    }
 
 }

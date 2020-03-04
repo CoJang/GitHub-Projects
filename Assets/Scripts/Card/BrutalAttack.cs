@@ -36,9 +36,11 @@ public class BrutalAttack : Card
 
     public void CauseBleeding(Objects target, float dot, short duration, short stack)
     {
-        target.ailment.states.Add(new Ailment.AilmentState
+        
+        target.ailment.states.Add(new AilmentState
             (Ailment.StateList.Bleeding, dot, duration, stack));
 
-        Debug.Log("Target's Ailment List : " + target.ailment.states.ToString());
+        //Debug.Log("Target's Ailment List : " + target.ailment.states.Count);
+        target.ailment.ShowStates();
     }
 }

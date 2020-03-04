@@ -18,34 +18,43 @@ public class Ailment : MonoBehaviour
         Shocked  // Twice damage on first hit
     }
 
-    public class AilmentState
-    {
-        public AilmentState(StateList state, float dot, short duration, short stack)
-        {
-            State = state;
-            DamageOverTime = dot;
-            Duration = duration;
-            Stack = stack;
-        }
-
-        public AilmentState(StateList state, short duration)
-        {
-            State = state;
-            Duration = duration;
-        }
-
-        public StateList State;
-        public float DamageOverTime;
-        public short Duration;
-        public short Stack;
-    }
     public List<AilmentState> states = new List<AilmentState>();
 
-    void Start()
+    private void PrintDetailState(int index)
     {
-        
-
-        
+        Debug.Log("State Name : " + states[index].State);
+        Debug.Log("Damage Over Time : " + states[index].DamageOverTime);
+        Debug.Log("Duration : " + states[index].Duration);
+        Debug.Log("Stack : " + states[index].Stack);
+    }
+    public void ShowStates()
+    {
+        for(int i = 0; i < states.Count; i++)
+        {
+            PrintDetailState(i);
+        }
     }
 
+}
+
+public class AilmentState
+{
+    public AilmentState(Ailment.StateList state, float dot, short duration, short stack)
+    {
+        State = state;
+        DamageOverTime = dot;
+        Duration = duration;
+        Stack = stack;
+    }
+
+    public AilmentState(Ailment.StateList state, short duration)
+    {
+        State = state;
+        Duration = duration;
+    }
+
+    public Ailment.StateList State;
+    public float DamageOverTime;
+    public short Duration;
+    public short Stack;
 }

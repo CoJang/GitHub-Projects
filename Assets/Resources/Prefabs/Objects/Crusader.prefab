@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 2056145939278585050}
   - component: {fileID: 2056145939278585049}
   - component: {fileID: 2056145939278585048}
+  - component: {fileID: -6441555151870180310}
   m_Layer: 0
   m_Name: Crusader
   m_TagString: EnemyObject
@@ -505,7 +506,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58f5d9bbaeb597d41acb097b3ca8d7eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ailment: {fileID: 0}
   BaseSkin: {fileID: 11400000, guid: 920ec8eedaff3924fa2449471e7d180b, type: 2}
+  IsAnimEnd: 0
+  AP: 0
+  AD: 0
+  ActionPoint: 0
+  AP_heal: 4
 --- !u!61 &2056145939278585048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -532,3 +539,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.76, y: 5.36}
   m_EdgeRadius: 0
+--- !u!114 &-6441555151870180310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056145939278585046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18acbc2ec14a82f44957b36dbe8bbc12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

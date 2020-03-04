@@ -3,6 +3,25 @@ Project Moss-Maze GitHub
 
 ======================= Fatch Note =======================
 
+- Added Object Manager
+- Reconstructed UI [ End Turn Button ]
+- Objects.cs Added some Player's Factors
+- Combined Ailment System [ None - Dmg Ailment Remains ]
+
+
+====================== 2020 / 03 / 04 =====================
+
+======================= Updated List ======================
+
+- Added Detail Phase [ TODO : Combine Phase & Ailments System ]
+- Added BaseObject's Checking Ailment System [ Need Update ]
+
+* TODO from past *
+[ TODO : Fix Marker between Sight ]
+[ TODO : Make Tile-Map System ]
+
+====================== 2020 / 03 / 02 =====================
+
 - Map System Updated
 - Added Fog of War [ TODO : Fix Marker between Sight ]
 - Deleted Tiles [ TODO : Make Tile-Map System ]
@@ -11,8 +30,6 @@ Project Moss-Maze GitHub
 * Welcome Back
 
 ====================== 2020 / 02 / 27 =====================
-
-======================= Updated List ======================
 
 - Map Tile Resource Added
 - Added Tile Code [ temp ]
